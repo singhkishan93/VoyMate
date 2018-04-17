@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/blue_grey_primary"
+    >
+
+    <!--<TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Language"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:paddingTop="25sp"/>
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/languages"
+        android:gravity="center"
+        android:paddingTop="25sp" />-->
+
+
+    <EditText android:id="@+id/txtText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter some text to speak"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dip"
+        />
+
+   <!-- <Button android:id="@+id/btnSpeak"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Speak Out"
+        android:textAllCaps="false"
+        android:background="#20000000"
+        android:textColor="@color/bg_screen4"
+        android:layout_margin="10dip"/>-->
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey_primary"
+    tools:context=".Settings">
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:text="Change Password"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textColor="@color/list_unselected"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:gravity="left|center"
+        android:drawableRight="@drawable/lefticon"
+        tools:ignore="RtlCompat" />
+
+    <Switch
+        android:id="@+id/notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="109dp"
+        android:text="Allow Notification"
+        android:textColor="@color/list_unselected"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        tools:ignore="RtlCompat" />
+
+   <TextView
+        android:id="@+id/report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="171dp"
+        android:text="Report a problem"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textColor="@color/list_unselected"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:gravity="left|center"
+        android:drawableRight="@drawable/lefticon"
+        tools:ignore="RtlCompat" />
+</RelativeLayout>

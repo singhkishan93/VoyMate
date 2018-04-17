@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_grey_primary"
+    tools:context=".NearBy">
+
+   <!-- <fragment
+        android:id="@+id/fr_map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/atm"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/atm"
+        app:civ_border_color="@color/bg_screen1"
+        app:civ_border_width="2dp"
+        tools:ignore="RtlCompat" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/banks"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/atm"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/bank"
+        app:civ_border_color="@color/bg_screen1"
+        app:civ_border_width="2dp"
+        tools:ignore="RtlCompat" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/police"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/banks"
+        android:layout_alignTop="@+id/hospitals"
+        android:src="@drawable/police"
+        app:civ_border_color="@color/bg_screen1"
+        app:civ_border_width="2dp"
+        tools:ignore="RtlCompat" />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/hospitals"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/atm"
+        android:layout_marginTop="235dp"
+        android:src="@drawable/hospital"
+        app:civ_border_color="@color/bg_screen1"
+        app:civ_border_width="2dp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/atm"
+        android:layout_marginTop="170dp"
+        android:text="ATM"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/banks"
+        android:layout_alignTop="@+id/textView6"
+        android:gravity="center"
+        android:text="Bank"
+        android:textColor="#ffffff"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="193dp"
+        android:gravity="center"
+        android:text="Hospital"
+        android:textColor="#ffffff"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/banks"
+        android:layout_alignTop="@+id/textView8"
+        android:gravity="center"
+        android:text="Police Station"
+        android:textColor="#ffffff"
+        tools:ignore="RtlCompat" />
+
+
+</RelativeLayout>

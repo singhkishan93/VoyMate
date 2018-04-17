@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homeicon1"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/explore"
+            app:itemBackground="@drawable/activated_item"
+            android:title="Explore" />
+        <item
+            android:id="@+id/nav_book"
+            android:icon="@drawable/booktour"
+            android:title="Book Tour" />
+        <item
+            android:id="@+id/nav_nearby"
+            android:icon="@drawable/nearby"
+            android:title="Near By" />
+
+        <item
+            android:id="@+id/nav_tool"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools" />
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_help_support"
+            android:title="Help" />
+
+        <item
+           android:id="@+id/nav_about"
+           android:icon="@drawable/ic_info_black_24dp"
+           android:title="About" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

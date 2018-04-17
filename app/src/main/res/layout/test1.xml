@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layback"
+    tools:context=".ExploreScreen">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:gravity="fill"
+            android:id="@+id/contain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="Monuments"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:id="@+id/magazines"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hrlist_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="0dp"
+                android:background="#B6B6B6"
+                android:scrollbars="horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="Religious Places"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:id="@+id/Books" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Books_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#B6B6B6"
+                android:layout_marginTop="0dp"
+                android:scrollbars="horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="Mixed Bag"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:id="@+id/literature" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/literature_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="0dp"
+                android:background="#B6B6B6"
+                android:scrollbars="horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:text="Market and Shopping"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:id="@+id/exams" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/exam_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="0dp"
+                android:background="#B6B6B6"
+                android:scrollbars="horizontal" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

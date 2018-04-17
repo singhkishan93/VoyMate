@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "773502425352",
+    "firebase_url": "https://voymate.firebaseio.com",
+    "project_id": "voymate",
+    "storage_bucket": "voymate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773502425352:android:f24f0b966617d147",
+        "android_client_info": {
+          "package_name": "com.opiant.voymate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773502425352-ar11u9si6q29e350588vhlofc0igqr00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.opiant.voymate",
+            "certificate_hash": "9577c5d9fc01bca907387330d5f02e7e12e44bac"
+          }
+        },
+        {
+          "client_id": "773502425352-tpv45380ba135v7je3bmm6ah68nuls6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV70RbMrgPeaF-7J008IBdexraMnHGejU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773502425352-tpv45380ba135v7je3bmm6ah68nuls6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

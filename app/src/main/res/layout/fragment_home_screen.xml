@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue_grey_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/fr_map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        />
+
+
+    <RelativeLayout
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/searchbox"
+            android:fontFamily="@assets/Roboto"
+            android:hint="Search Place Near By Delhi"
+            android:cursorVisible="false"
+            android:drawableRight="@drawable/search"
+            android:layout_height="40dp"
+            android:background="@drawable/round_edit"
+            android:gravity="center"
+            android:layout_width="match_parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sights"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/mapmarker"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="410dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/bg_screen1"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/res_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/resta"
+            android:layout_toRightOf="@+id/sights"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="410dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/bg_screen1"/>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/hotel_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/hotel"
+            android:layout_toRightOf="@+id/res_image"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="410dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/bg_screen1"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/shoping_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/sights"
+            android:src="@drawable/shop"
+            app:civ_border_color="@color/bg_screen1"
+            app:civ_border_width="2dp"
+            tools:ignore="RtlCompat" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/activities_image"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/res_image"
+            android:src="@drawable/acti"
+            app:civ_border_color="@color/bg_screen1"
+            app:civ_border_width="2dp"
+            tools:ignore="RtlCompat" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sos"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/hotel_image"
+            android:src="@drawable/sosicon"
+            app:civ_border_color="@color/bg_screen1"
+            app:civ_border_width="2dp"
+            tools:ignore="RtlCompat" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

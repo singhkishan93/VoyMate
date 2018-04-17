@@ -1,0 +1,359 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">VoyMate</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">VoyMate App</string>
+    <string name="nav_header_subtitle">voymateapp@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Religious Place</string>
+    <string name="slide_1_desc">The easiest way to find out Religious Places!</string>
+
+    <string name="slide_2_title">Monuments</string>
+    <string name="slide_2_desc">To know history about monuments!</string>
+
+    <string name="slide_3_title">Book Hotels!</string>
+    <string name="slide_3_desc">Best way to book a hotel</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">It is a guider for you for your world travel!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="google_key">AIzaSyAGPF0HDsgWWWDXnYB3Ee5EtBEy7gUYS2A</string>
+    <string name="place_key">AIzaSyAGPF0HDsgWWWDXnYB3Ee5EtBEy7gUYS2A</string>
+
+    <string name="english">The Red Fort is a historic fort in the city of Delhi. It was the main residence of the emperors of the Mughal dynasty for nearly 200 years, until 1856. It is located in the center of Delhi and houses a number of museums. In addition to accommodating the emperors and their households, it was the ceremonial and political center of the Mughal state and the setting for events critically impacting the region.Constructed in 1639 by the fifth Mughal Emperor Shah Jahan as the palace of his fortified capital Shahjahanabad, the Red Fort is named for its massive enclosing walls of red sandstone and is adjacent to the older Salimgarh Fort, built by Islam Shah Suri in 1546. The imperial apartments consist of a row of pavilions, connected by a water channel known as the Stream of Paradise (Nahr-i-Bihisht). The fort complex is considered to represent the zenith of Mughal creativity under Shah Jahan and although the palace was planned according to Islamic prototypes, each pavilion contains architectural elements typical of Mughal buildings that reflect a fusion of Timurid and Persian traditions. The Red Fort’s innovative architectural style, including its garden design, influenced later buildings and gardens in Delhi, Rajasthan, Punjab, Kashmir, Braj, Rohilkhand and elsewhere.</string>
+    <string name="hindi">लाल किला दिल्ली शहर में एक ऐतिहासिक किला है। यह लगभग 200 वर्षों के लिए मुगल वंश के सम्राटों का मुख्य निवास था, 1856 तक। यह दिल्ली के केंद्र में स्थित है और कई संग्रहालय हैं। सम्राटों और उनके परिवारों को समायोजित करने के अलावा, यह मुगल राज्य का औपचारिक और राजनीतिक केंद्र था और इस क्षेत्र को गंभीर रूप से प्रभावित करने वाले घटनाओं की स्थापना।अपने गढ़वाले राजधानी शाहजहांबाद के महल के रूप में पांचवें मुगल सम्राट शाहजहां द्वारा 1639 में निर्मित लाल किले लाल बलुआ पत्थर की विशाल दीवारों के नाम पर रखा गया है और यह 1546 में इस्लाम शाह सूरी द्वारा निर्मित पुराने सलीमगढ़ किले के निकट है। शाही अपार्टमेंट में मंडप की एक पंक्ति होती है, जो एक जल चैनल से जुड़ा है जिसे स्वर्ग की धारा (नहर-ए-बिहिशत) के नाम से जाना जाता है। किले परिसर शाहजहां के अधीन मुग़ल रचनात्मकता के चरमपंथ का प्रतिनिधित्व करने के लिए माना जाता है और यद्यपि महल इस्लामी प्रोटोटाइप के अनुसार नियोजित था, प्रत्येक मंडप में वास्तुशिल्प तत्व शामिल हैं, जो मुगल इमारतों की विशिष्टता हैं, जो कि तिमुरीद और फारसी परंपराओं का मिश्रण दर्शाते हैं। लाल किले की आधुनिक वास्तुकला शैली, इसके बगीचे डिजाइन सहित, बाद में दिल्ली, राजस्थान, पंजाब, कश्मीर, ब्रज, रोहिलखंड और अन्य जगहों पर इमारतों और उद्यानों को प्रभावित करती है।</string>
+    <string name="japanies">レッド・フォートは1648年、ムガール帝国の第5代シャー・ジャハンによって城に建てられました。赤い砦は赤い砦であるその名前のために完全に赤い石でできていました。 1546年にイスラム・シャー・スーリによって建てられたサリムガル砦のように、レッド・フォートも建設されました。この美しい要塞劇場では、水路に接続されたステージが作られ、Canal-e-Bahurshと呼ばれています。</string>
+    <string name="french">"Le Fort Rouge est un fort historique dans la ville de Delhi. Il a été la résidence principale des empereurs de la dynastie moghole pendant près de 200 ans, jusqu en 1856. Il est situé dans le centre de Delhi et abrite un certain nombre de musées. En plus d accueillir les empereurs et leurs familles, c était le centre cérémoniel et politique de l État moghol et le cadre des événements ayant un impact critique sur la région.Construit en 1639 par le cinquième empereur moghol Shah Jahan comme le palais de sa capitale fortifiée Shahjahanabad, le Fort Rouge est nommé pour ses murs de grès rouge et est adjacent à l ancien fort Salimgarh, construit par l islam Shah Suri en 1546. Le Les appartements impériaux se composent d une rangée de pavillons, reliés par un canal d eau connu sous le nom de ruisseau du paradis (Nahr-i-Bihisht). Le complexe du fort est considéré comme le zénith de la créativité moghole sous Shah Jahan et bien que le palais ait été conçu selon des prototypes islamiques, chaque pavillon contient des éléments architecturaux typiques des bâtiments moghols qui reflètent une fusion des traditions timurides et persanes. Le style architectural innovant du Fort Rouge, y compris sa conception de jardin, a influencé les bâtiments et les jardins de Delhi, du Rajasthan, du Pendjab, du Cachemire, de Braj, de Rohilkhand et d'ailleurs."</string>
+    <string name="spanish">"El Fuerte Rojo es un fuerte histórico en la ciudad de Delhi. Fue la residencia principal de los emperadores de la dinastía Mughal durante casi 200 años, hasta 1856. Se encuentra en el centro de Delhi y alberga una serie de museos. Además de acomodar a los emperadores y sus hogares, era el centro ceremonial y político del estado de Mughal y el escenario de eventos que impactaban de manera crítica en la región.Construido en 1639 por el quinto emperador mogol Shah Jahan como el palacio de su capital fortificada Shahjahanabad, el Fuerte Rojo recibe su nombre por sus paredes masivas de arenisca roja y se encuentra junto al antiguo fuerte de Salimgarh, construido por Islam Shah Suri en 1546. El Los apartamentos imperiales consisten en una fila de pabellones, conectados por un canal de agua conocido como el Arroyo del Paraíso (Nahr-i-Bihisht). Se considera que el complejo del fuerte representa el cenit de la creatividad de Mughal bajo Shah Jahan y, aunque el palacio fue planeado de acuerdo con prototipos islámicos, cada pabellón contiene elementos arquitectónicos típicos de los edificios de Mughal que reflejan una fusión de tradiciones timúridas y persas. El estilo arquitectónico innovador del Fuerte Rojo, incluido su diseño de jardín, influyó en edificios y jardines posteriores en Delhi, Rajasthan, Punjab, Cachemira, Braj, Rohilkhand y otros lugares."</string>
+    <string name="akenglish">Akshardham or Swaminarayan Akshardham complex is a Hindu mandir, and a spiritual-cultural campus in New Delhi, India.[1][2] Also referred to as Akshardham Temple or Swaminarayan Akshardham, the complex displays millennia of traditional Hindu and Indian culture, spirituality, and architecture.The temple, which attracts approximately 70 percent of all tourists who visit Delhi,[3][4] was officially opened on 6 November 2005 by Dr. A. P. J. Abdul Kalam.[5] It sits near the banks of the Yamuna adjacent to the 2010 Commonwealth Games village in eastern New Delhi.[6] The temple, at the centre of the complex, was built according to the Vastu shastra and Pancharatra shastra.</string>
+    <string name="akhindi">अक्षरधाम या स्वामीनारायण अक्षरधाम जटिल एक हिंदू मंदिर और नई दिल्ली, भारत में एक आध्यात्मिक-सांस्कृतिक परिसर है। इसके अलावा अक्षरधाम मंदिर या स्वामीनारायण अक्षरधाम के रूप में भी जाना जाता है, जटिल हिंदू और भारतीय संस्कृति, आध्यात्मिकता, और वास्तुकला के सहस्राब्दी प्रदर्शित करता है।यह मंदिर, जो लगभग सभी पर्यटकों के 70 प्रतिशत पर्यटकों को आकर्षित करता है, को आधिकारिक तौर पर 6 नवंबर 2005 को डॉ। ए.पी.ए. अब्दुल कलाम द्वारा खोला गया था। यह पूर्वी नई दिल्ली के 2010 राष्ट्रमंडल खेलों के गांव के निकट यमुना के तट के पास बैठता है। परिसर के केंद्र में मंदिर, वास्तु शास्त्र और पंचरत्र शास्त्र के अनुसार बनाया गया था।</string>
+    <string name="akfrench">Le complexe Akshardham ou Swaminarayan Akshardham est un mandir hindou et un campus spirituel et culturel à New Delhi, en Inde. Aussi appelé Akshardham Temple ou Swaminarayan Akshardham, le complexe présente des millénaires de culture, de spiritualité et d architecture hindoue et indienne traditionnelles. Le temple, qui attire environ 70% de tous les touristes qui visitent Delhi, a été officiellement inauguré. le 6 novembre 2005 par le Dr. APJ Abdul Kalam. [5] Il se trouve près des rives de la Yamuna à côté du village des Jeux du Commonwealth 2010 dans l est de New Delhi. Le temple, au centre du complexe, a été construit selon le Vastu Shastra et le Pancharatra Shastra.</string>
+    <string name="akspanish">El complejo Akshardham o Swaminarayan Akshardham es un mandir hindú y un campus espiritual y cultural en Nueva Delhi, India. [1] [2] También conocido como Templo Akshardham o Swaminarayan Akshardham, el complejo exhibe milenios de cultura hindú e india tradicional, espiritualidad y arquitectura. El templo, que atrae aproximadamente al 70 por ciento de todos los turistas que visitan Delhi, [3] [4] fue inaugurado oficialmente el 6 de noviembre de 2005 por el Dr. APJ Abdul Kalam. [5] Se encuentra cerca de las orillas del Yamuna adyacente a la aldea de los Juegos de la Commonwealth 2010 en el este de Nueva Delhi. [6] El templo, en el centro del complejo, fue construido de acuerdo con el Vastu shastra y el Pancharatra shastra.</string>
+    <string name="jalmahalenglish">Jal Mahal (meaning "Water Palace") is a palace in the middle of the Man Sagar Lake in Jaipur city, the capital of the state of Rajasthan, India. The palace and the lake around it were renovated and enlarged in the 18th century by Maharaja Jai Singh II of Amber.The Jal Mahal palace is an architectural showcase of the Rajput style of architecture (common in Rajasthan) on a grand scale. The palace, built in red sandstone, is a five storied building, of which four floors remain underwater when the lake is full and the top floor is exposed. The hills surrounding the lake area have quartzite rock formations which is part of Aravalli hills range. From the north east, the Kanak Vrindavan valley, where a temple complex sits, the hills slope gently towards the lake edge. Within the lake area, the ground area is made up of a thick mantle of soil, blown sand and alluvium. Forest denudation, particularly in the hilly areas, has caused soil erosion, compounded by wind and water action. On the terrace of the palace, a garden is built with arched passages. At each corner of this palace semi-octagonal towers are built with an elegant cupola. Now, a new terrace is being created based on a similar roof garden of the Amer palace.</string>
+    <string name="jalmahalhindi">जल महल (जिसका अर्थ है "जल महल") जयपुर शहर में मैन सागर झील के मध्य में एक राजमार्ग है, राजस्थान राज्य की राजधानी, भारत। महल और उसके चारों ओर झील को 18 वीं शताब्दी में अंबर के महाराजा जय सिंह द्वितीय द्वारा पुनर्निर्मित किया गया था।जल महल महल एक विशाल पैमाने पर वास्तुकला की राजपूत शैली (राजस्थान में आम) के एक वास्तुकला का प्रदर्शन है। महल, लाल बलुआ पत्थर में निर्मित, एक पांच मंजिला इमारत है, जिसमें से चार मंजिल पानी के नीचे रहते हैं जब झील पूरी हो जाती है और ऊपरी मंजिल का पता चलता है। झील क्षेत्र के आसपास की पहाड़ियों में क्वार्टाज़िट रॉक संरचनाएं हैं जो अरवलीली पर्वतमाला का हिस्सा हैं। उत्तर पूर्व से, कनक वृंदावन घाटी, जहां एक मंदिर परिसर में बैठता है, पहाड़ी ढलान धीरे झील के किनारे की ओर। झील क्षेत्र के भीतर, भूमि क्षेत्र मिट्टी का एक मोटी ढलना, उड़ा दिया रेत और जलोढ़ का बना होता है। वन झुकाव, विशेष रूप से पहाड़ी क्षेत्रों में, मिट्टी की कटाव का कारण बनता है, जो हवा और पानी की कार्रवाई से जटिल है। महल की छत पर, एक बगीचे में धनुषाकार मार्ग बनाया गया है। इस महल के अर्ध-अष्टकोणीय टावरों के प्रत्येक कोने में एक खूबसूरत गुंबद के साथ बनाया गया है। अब, आमेर पैलेस के समान छत के बगीचे के आधार पर एक नई छत बनाया जा रहा है।</string>
+    <string name="jalmahalfrench">"Jal Mahal (qui signifie «palais de l'eau») est un palais au milieu du lac Man Sagar dans la ville de Jaipur, la capitale de l'État du Rajasthan, en Inde. Le palais et le lac qui l'entoure ont été rénovés et agrandis au XVIIIe siècle par le Maharaja Jai ​​Singh II d'Ambre. Le palais Jal Mahal est une vitrine architecturale de l'architecture Rajput (commune au Rajasthan) à grande échelle. Le palais, construit en grès rouge, est un bâtiment de cinq étages, dont quatre étages restent sous l'eau lorsque le lac est plein et le dernier étage est exposé. Les collines entourant la région du lac ont des formations rocheuses de quartzite qui font partie de la chaîne des collines Aravalli. Du nord-est, la vallée Kanak Vrindavan, où se trouve un complexe de temples, les collines s'inclinent doucement vers le bord du lac. Dans la zone du lac, le sol est constitué d'un épais manteau de sol, de sable soufflé et d'alluvions. La dénudation des forêts, en particulier dans les zones de collines, a provoqué l'érosion des sols, aggravée par l'action du vent et de l'eau. Sur la terrasse du palais, un jardin est construit avec des passages voûtés. À chaque angle de ce palais, des tours semi-octogonales sont construites avec une élégante coupole. Maintenant, une nouvelle terrasse est créée sur la base d'un jardin sur le toit similaire du palais Amer."</string>
+    <string name="jalmahalspanish">"Jal Mahal (que significa "Palacio del Agua") es un palacio en el medio del Lago Man Sagar en la ciudad de Jaipur, la capital del estado de Rajasthan, India. El palacio y el lago a su alrededor fueron renovados y ampliados en el siglo XVIII por Maharaja Jai ​​Singh II de Amber. El palacio Jal Mahal es una muestra arquitectónica del estilo de arquitectura Rajput (común en Rajasthan) a gran escala. El palacio, construido en piedra arenisca roja, es un edificio de cinco pisos, de los cuales cuatro pisos permanecen bajo el agua cuando el lago está lleno y el último piso está expuesto. Las colinas que rodean la zona del lago tienen formaciones rocosas de cuarcita que forman parte de la cordillera de Aravalli. Desde el noreste, el valle de Kanak Vrindavan, donde se encuentra un complejo de templos, las colinas descienden suavemente hacia el borde del lago. Dentro del área del lago, el área del suelo está formada por un manto grueso de tierra, arena y aluvión. La denudación de los bosques, particularmente en las áreas montañosas, ha causado la erosión del suelo, agravada por la acción del viento y el agua. En la terraza del palacio, un jardín está construido con pasajes abovedados. En cada esquina de este palacio se construyen torres semioctagonales con una elegante cúpula. Ahora, se está creando una nueva terraza basada en un jardín de techo similar del Amer Palace."</string>
+    >
+    <string name="tajenglish">"An immense mausoleum of white marble, built in Agra by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal. Taj Mahal is the jewel of Muslim art in India and one of the universally admired masterpieces of the world's heritage.The Taj Mahal is located on the right bank of the Yamuna River in the Agra District in Uttar Pradesh. It was built in between 1632 AD and 1648 AD, with the mosque, the guest house and the main gateway on the south, the outer courtyard and its cloisters were added subsequently and completed in 1653 AD. The existence of several historical and Quaranic inscriptions in Arabic script have facilitated setting the chronology of Taj Mahal. For its construction, masons, stone-cutters, inlayers, carvers, painters, calligraphers, dome builders and other artisans were requisitioned from the whole of the empire and also from the Central Asia and Iran. Ustad-Ahmad Lahori was the main architect of the Taj Mahal.Taj Mahal is considered to be the greatest architectural achievement in the whole range of Indo-Islamic architecture. Its recognised architectonic beauty has a rhythmic combination of solids and voids, concave and convex and light shadow; such as arches and domes further increases the aesthetic aspect. The colour combination of lush green scape reddish pathway and blue sky over it show cases the monument in ever changing tints and moods. The relief work in marble and inlay with precious and semi precious stones make it a monument apart."</string>
+    <string name="tajhindi">अपनी पत्नी मुमताज महल की स्मृति में मुगल सम्राट शाहजहां द्वारा आगरा में निर्मित सफेद संगमरमर का एक विशाल मकबरा, ताजमहल भारत में मुस्लिम कला का गहना है और दुनिया की विरासत के सार्वभौमिक प्रशंसनीय मास्टरपीस में से एक है।ताजमहल उत्तर प्रदेश के आगरा जिले में यमुना नदी के दाहिने किनारे पर स्थित है। यह 1632 ईस्वी और 1648 ईस्वी के बीच में मस्जिद, गेस्ट हाउस और दक्षिण में मुख्य प्रवेश द्वार के साथ बनाया गया था, बाहरी आंगन और इसके cloisters बाद में जोड़ा गया और 1653 ईस्वी में पूरा किया गया। अरबी लिपि में कई ऐतिहासिक और क्वार्नी शिलालेखों के अस्तित्व ने ताजमहल के कालक्रम को स्थापित करने में मदद की है। पूरे साम्राज्य और मध्य एशिया और ईरान से इसके निर्माण, मैथ्स, पत्थर कटर, इनलेयर, कारवाहक, चित्रकारों, गालियां लिखने वाले, गुंबद बनानेवाले और अन्य कारीगरों की मांग की गई थी। उस्ताद-अहमद लाहौरी ताजमहल के मुख्य वास्तुकार थे।ताजमहल को भारत-इस्लामी वास्तुकला की पूरी श्रृंखला में सबसे बड़ा वास्तुशिल्प उपलब्धि माना जाता है। इसकी मान्यता प्राप्त आर्किटेक्टनिक सौंदर्य में ठोस और voids, अवतल और उत्तल और हल्की छाया का तालबद्ध संयोजन है; जैसे मेहराब और गुंबदों में सौंदर्यवादी पहलू बढ़ जाती है। हरे भरे रंग का लाल रंग का रास्ता और नीला आकाश का रंग संयोजन यह दिखाता है कि कभी-कभी बदले हुए संकेतों और मूड में स्मारक दिखाई देते हैं। संगमरमर और जड़ना में बहुमूल्य और अर्ध कीमती पत्थरों के साथ राहत कार्य, यह एक स्मारक को अलग बनाता है।</string>
+    <string name="tajfrench">"Un immense mausolée de marbre blanc, construit à Agra par l'empereur moghol Shah Jahan en mémoire de sa femme Mumtaz Mahal. Taj Mahal est le joyau de l'art musulman en Inde et l'un des chefs-d'œuvre universellement admirés du patrimoine mondial.Le Taj Mahal est situé sur la rive droite de la rivière Yamuna dans le district d'Agra dans l'Uttar Pradesh. Il a été construit entre 1632 et 1648 après JC, avec la mosquée, la maison d'hôtes et la porte principale au sud, la cour extérieure et son cloître ont été ajoutés par la suite et achevé en 1653 après JC. L'existence de plusieurs inscriptions historiques et quaraniques en écriture arabe a facilité la mise en place de la chronologie du Taj Mahal. Pour sa construction, des maçons, des tailleurs de pierre, des inlayers, des sculpteurs, des peintres, des calligraphes, des constructeurs de dômes et d'autres artisans ont été réquisitionnés de tout l'empire et aussi de l'Asie centrale et de l'Iran. Ustad-Ahmad Lahori était l'architecte principal du Taj Mahal.Le Taj Mahal est considéré comme la plus grande réalisation architecturale de toute l'architecture indo-islamique. Sa beauté architectonique reconnue a une combinaison rythmique de solides et de vides, d'ombre concave et convexe et légère; tels que les arcs et les dômes augmente encore l'aspect esthétique. La combinaison de couleurs de la voie rougeâtre scape verte luxuriante et du ciel bleu au-dessus montre le cas dans le monument en changeant de teintes et d'humeurs. Les reliefs en marbre et incrustation de pierres précieuses et semi-précieuses en font un monument à part."</string>
+    >
+    <string name="tajspanish">Un inmenso mausoleo de mármol blanco, construido en Agra por el emperador mogol Shah Jahan en memoria de su esposa Mumtaz Mahal. Taj Mahal es la joya del arte musulmán en la India y una de las obras maestras universalmente admiradas del patrimonio mundial.El Taj Mahal está ubicado en la orilla derecha del río Yamuna en el distrito de Agra en Uttar Pradesh. Fue construido entre 1632 AD y 1648 dC, con la mezquita, la casa de huéspedes y la entrada principal en el sur, el patio exterior y sus claustros se añadieron posteriormente y se completaron en 1653 AD. La existencia de varias inscripciones históricas y cuaranicas en escritura árabe han facilitado el establecimiento de la cronología del Taj Mahal. Para su construcción, albañiles, cortadores de piedra, incrustaciones, talladores, pintores, calígrafos, constructores de domos y otros artesanos fueron requisados ​​de todo el imperio y también de Asia Central e Irán. Ustad-Ahmad Lahori fue el principal arquitecto del Taj Mahal.Taj Mahal es considerado el mayor logro arquitectónico en toda la gama de la arquitectura indo-islámica. Su belleza arquitectónica reconocida tiene una combinación rítmica de sólidos y vacíos, cóncavo y convexo y sombra ligera; tales como arcos y cúpulas aumenta aún más el aspecto estético. La combinación de colores de la vía rojiza del exuberante paisaje verde y el cielo azul sobre ella muestran casos del monumento en tintes y estados de ánimo siempre cambiantes. El trabajo de alivio en mármol y incrustaciones de piedras preciosas y semi preciosas lo convierten en un monumento aparte.</string>
+    >
+    <string name="dillihaatenglish">Dilli Haat is a paid-entrance open-air food plaza and craft bazaar located in Delhi, run by Delhi Tourism and Transportation Development Corporation (DTTDC). Unlike the traditional weekly market, the village Haat, Dilli Haat is permanent. It is located in the commercial centres of South Delhi, opposite INA market. The 6 acres of land on which this complex is situated was salvaged as part of a reclamation project and transformed into a plaza. Extensive foundation work, small thatched roof cottages and kiosks give the plaza a village atmosphere. Some shops are permanent but other sellers are rotated, usually for fifteen days. A number of shows promoting handicrafts and handlooms are held at the exhibition hall in the complex. In all, Dilli Haat, INA Market has 62 stalls.</string>
+    >
+    <string name="dillihaathindi">दिल्ली दौलत एवं परिवहन विकास निगम (डीटीटीडीसी) द्वारा संचालित दिल्ली में स्थित दलित हाट एक भुगतान-प्रवेश द्वार खुली हवा वाली खाद्य प्लाज़ा और शिल्प बाजार है। पारंपरिक साप्ताहिक बाजार के विपरीत, गांव हाट, दीलि हाट स्थायी है। यह दक्षिण दिल्ली के वाणिज्यिक केंद्रों में स्थित है, आईएनए बाजार के सामने। 6 एकड़ जमीन जिस पर यह परिसर स्थित है, एक उद्धार परियोजना के हिस्से के रूप में बचाया गया था और एक प्लाज़ा में बदल दिया गया था। व्यापक नींव का काम, छोटे छत वाले छत के कॉटेज और कियोस्क प्लाज़ा को एक गांव का वातावरण प्रदान करते हैं। कुछ दुकानें स्थायी हैं लेकिन अन्य विक्रेताओं को आमतौर पर पन्द्रह दिनों के लिए घुमाया जाता है। हस्तशिल्प और हथकरघा को बढ़ावा देने वाले कई शो परिसर में प्रदर्शनी हॉल में आयोजित किए जाते हैं। सभी में, दिल्ली हाट, आईएनए मार्केट में 62 स्टॉल हैं।</string>
+    >
+    <string name="dillihaatfrench">"Dilli Haat est un marché d'alimentation en plein air et un bazar artisanal à Delhi, géré par la Delhi Tourism and Transportation Development Corporation (DTTDC). Contrairement au marché hebdomadaire traditionnel, le village de Haat, Dilli Haat est permanent. Il est situé dans les centres commerciaux de South Delhi, en face du marché INA. Le terrain de 6 acres sur lequel ce complexe est situé a été récupéré dans le cadre d'un projet de remise en état et transformé en place. Les travaux de fondation étendus, les petites maisons et les kiosques de toit de chaume donnent à la place une atmosphère de village. Certains magasins sont permanents mais d'autres vendeurs sont alternés, habituellement pendant quinze jours. Un certain nombre de spectacles promotionnels d'artisanat et de métiers à main ont lieu dans le hall d'exposition du complexe. En tout, Dilli Haat, INA Market compte 62 stands."</string>
+    >
+    <string name="dillihaatspanish">"Dilli Haat es una plaza de comida al aire libre de pago y un bazar artesanal ubicado en Delhi, administrado por la Corporación para el Desarrollo del Turismo y el Transporte de Delhi (DTTDC). A diferencia del mercado semanal tradicional, el pueblo Haat, Dilli Haat es permanente. Está ubicado en los centros comerciales del sur de Delhi, frente al mercado INA. Los 6 acres de tierra en los que se encuentra este complejo se rescataron como parte de un proyecto de recuperación y se transformaron en una plaza. El amplio trabajo de cimentación, las cabañas con techos de paja y los kioscos le dan a la plaza un ambiente de pueblo. Algunas tiendas son permanentes, pero otros vendedores rotan, generalmente durante quince días. En la sala de exposiciones del complejo se llevan a cabo varios espectáculos de promoción de artesanías y telares manuales. En total, Dilli Haat, INA Market tiene 62 puestos."</string>
+    >
+
+
+    <string-array name="languages">
+        <item>Select language</item>
+        <!-- <item>日本語</item>-->
+        <item>हिंदी</item>
+        <item>English</item>
+        <item>français</item>
+        <item>Español</item>
+    </string-array>
+
+    <string-array name="currencies">
+        <item>AUD</item>
+        <item>BGN</item>
+        <item>BRL</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>CZK</item>
+        <item>DKK</item>
+        <item>GBP</item>
+        <item>HKD</item>
+        <item>HRK</item>
+        <item>HUF</item>
+        <item>IDR</item>
+        <item>ILS</item>
+        <item>INR</item>
+        <item>JPY</item>
+        <item>KRW</item>
+        <item>MXN</item>
+        <item>MYR</item>
+        <item>NOK</item>
+        <item>NZD</item>
+        <item>PHP</item>
+        <item>PLN</item>
+        <item>RON</item>
+        <item>RUB</item>
+        <item>SEK</item>
+        <item>SGD</item>
+        <item>THB</item>
+        <item>TRY</item>
+        <item>USD</item>
+        <item>ZAR</item>
+    </string-array>
+
+    <string name="login_success">login success</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGNUP</string>
+    <string name="Username">Email</string>
+    <string name="name">Name</string>
+    <string name="Password">Password</string>
+    <string name="forgot_your_password">Forgot Password?</string>
+    <string name="go">GO</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="register">SIGN UP</string>
+    <string name="hint_username">Enter a new username</string>
+    <string name="hint_email_reset">Enter your email</string>
+    <string name="enter_group_name">Enter group name</string>
+    <string name="loginsignup">Login/Signup</string>
+    <string name="mnumber">Mobile</string>
+    <string name="otp">Enter Otp</string>
+    <string name="native_language">Enter Your Native Language</string>
+
+    <!-- Strings related to Main -->
+
+    <string name="action_main_settings">Settings</string>
+    <string name="tab_title_main_1">Cards</string>
+    <string name="tab_title_main_2">Dialogs</string>
+    <string name="tab_title_main_3">Widgets</string>
+    <string name="main_snack_bar">This is a snack bar</string>
+    <string name="main_snack_bar_action">Okay</string>
+
+    <string name="main_card_title">Title goes here</string>
+    <string name="main_card_title_short">Title</string>
+    <string name="main_card_subtitle">Subtitle here</string>
+    <string name="main_card_details">Details here</string>
+    <string name="main_card_button_1">ACTION 1</string>
+    <string name="main_card_button_2">ACTION 2</string>
+    <string name="main_flat_button_1_clicked">Flat Button 1</string>
+    <string name="main_flat_button_2_clicked">Flat Button 2</string>
+
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_neutral">Neutral</string>
+    <string name="dialog_close">Close</string>
+    <string name="main_dialog_simple">Simple dialog</string>
+    <string name="main_dialog_simple_title">A simple dialog</string>
+    <string name="main_dialog_simple_message">
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion. "
+        "\nThe material is grounded in tactile reality, inspired by the study of paper and ink, yet technologically advanced and open to imagination and magic."</string>
+    <string name="main_dialog_single_choice">Single choice dialog</string>
+    <string name="main_dialog_multi_choice">Multi choice dialog</string>
+    <string name="main_dialog_progress_title">Progress dialog...</string>
+    <string name="main_dialog_progress">Progress dialog</string>
+    <string name="main_dialog_data_picker">Date Picker Dialog</string>
+    <string name="main_dialog_data_time">Time Picker Dialog</string>
+    <string name="main_dialog_bottom">Bottom Dialog</string>
+    <string name="main_dialog_fullscreen">Fullscreen Dialog</string>
+    <string name="main_popup_menu">Popup Menu</string>
+
+    <string name="main_widget_toggle_button">Toggle Button</string>
+    <string name="main_widget_switch">Switch</string>
+    <string name="main_widget_check_box">Check Box</string>
+    <string name="main_widget_check_box_1">CheckBox 1</string>
+    <string name="main_widget_check_box_2">CheckBox 2</string>
+    <string name="main_widget_check_box_3">CheckBox 3</string>
+    <string name="main_widget_radio">Radio Group and Radio Buttons</string>
+    <string name="main_widget_radio_button_1">RadioButton 1</string>
+    <string name="main_widget_radio_button_2">RadioButton 2</string>
+    <string name="main_widget_radio_button_3">RadioButton 3</string>
+    <string name="main_widget_seek_bar">Seek Bar</string>
+    <string name="main_widget_progress_bar">Progress Bar</string>
+    <string name="main_widget_extract_edit_text">Extract Edit Text</string>
+    <string name="main_widget_text_input_layout">Text Input Layout</string>
+    <string name="main_widget_edit_text">edit text</string>
+    <string name="main_widget_spinner">Spinner</string>
+    <string name="main_widget_data_picker">Date Picker</string>
+    <string name="main_widget_time_picker">Time Picker</string>
+
+    <string name="nav_header_text">Click to start login activity</string>
+    <string name="nav_recycler_view">Recycler View</string>
+    <string name="nav_scrolling">Scrolling</string>
+    <string name="nav_fullscreen">FullScreen</string>
+    <string name="nav_bottom_navigation">Bottom Navigation</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about">About</string>
+    <string name="nav_donate">Donations</string>
+    <string name="main_feedback_email">Feedback:MaterialDesign</string>
+    <string name="main_not_found_email">Not found email app</string>
+    <string name="nav_my_apps">My Apps</string>
+    <string name="nav_color">Material Design Color</string>
+
+    <!-- Strings related to Scrolling -->
+    <string name="title_activity_scrolling">Scrolling</string>
+    <string name="large_text">
+        "Material is the metaphor."
+        "\n\nA material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic."
+        "\nSurfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics."
+        "\nThe fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts."
+        "\n\nBold, graphic, intentional."
+        "\n\nThe foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience."
+        "\nAn emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user."
+        "\n\nMotion provides meaning."
+        "\n\nMotion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design."
+        "\nAll action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize."
+        "\nMotion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent."
+        "\n\n3D world."
+        "\n\nThe material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness."
+        "\nOn the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis."
+        "\n\nLight and shadow."
+        "\n\nWithin the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles."
+        "\nShadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp."
+        "\n\nResting elevation."
+        "\n\nAll material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible."
+        "\n\nComponent elevations."
+        "\n\nThe resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app)."
+        "\nComponents may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop)."
+        "\n\nResponsive elevation and dynamic elevation offsets."
+        "\n\nSome component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets."
+        "\nDynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation."
+        "\nOnce the input event is completed or cancelled, the component will return to its resting "
+        "elevation."
+        "\n\nAvoiding elevation interference."
+        "\n\nComponents with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout."
+        "\nOn a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears."
+        "\nOn the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+    <!-- Strings related to Fullscreen -->
+    <string name="title_activity_fullscreen">Fullscreen</string>
+
+    <!-- String related to RecyclerView -->
+    <string name="title_activity_recycler_view">RecyclerView</string>
+    <string name="tv_recycler_item_1">Swipe down to refresh</string>
+    <string name="tv_recycler_item_2">Swipe left or right to dismiss it</string>
+    <string name="tv_recycler_item_3">Drag up or down to move it</string>
+    <string name="title_activity_share_view">Share View</string>
+    <string name="share_view_press_it">You can press it</string>
+    <string name="no_more_data">No more data</string>
+    <string name="item_swipe_dismissed">Dismissed</string>
+    <string name="item_swipe_undo">Undo</string>
+
+    <!-- String related to Login -->
+    <string name="title_activity_login">Login</string>
+    <string name="login_user_name_hint">phone or email</string>
+    <string name="login_user_name_password">password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="error_invalid_name">Invalid user name</string>
+    <string name="error_invalid_password">At least 4 characters</string>
+    <string name="error_incorrect_password">Incorrect password</string>
+    <string name="error_no_name">Input your phone or email</string>
+    <string name="error_no_password">Input your password</string>
+    <string name="snackbar_forgot_password">Oh oh !</string>
+    <string name="snackbar_register">Oh oh !</string>
+
+    <!-- Strings related to Settings -->
+    <string name="settings_category_basic">Basic Settings</string>
+    <string name="settings_category_advanced">Advanced Settings</string>
+    <string name="settings_category_other">Other Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="settings_switch_preference_title">Switch Preference</string>
+    <string name="settings_switch_preference_summary">Switch Preference Summary</string>
+    <string name="settings_check_box_preference_title">Check Box Preference</string>
+    <string name="settings_edit_text_preference_title">Edit Text Preference</string>
+    <string name="settings_edit_text_preference_default_value">Material Design</string>
+    <string name="settings_list_preference_dialog_title">List Preference</string>
+    <string name="settings_list_preference_title">List Preference</string>
+    <string name="settings_multi_select_list_preference_dialog_title">Multi Select List Preference</string>
+    <string name="settings_multi_select_list_preference_title">Multi Select List Preference</string>
+    <string name="settings_preference_click_title">OnPreferenceClickListener</string>
+    <string name="settings_preference_click_to_activity">Click to start an activity</string>
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="pref_on_preference_click">onPreferenceClick</string>
+
+    <!-- String related to About -->
+    <string name="title_activity_about">About</string>
+    <string name="about_version">Version: </string>
+    <string name="about_email_intent">About:VoyMate App</string>
+    <string name="about_not_found_email">Not found email app</string>
+    <string name="about_card1_title">Material Design Demo</string>
+    <string name="about_card1_message">Hey, glad to see you!</string>
+    <string name="about_card2_title">If you liked the app, feel free to contact me.</string>
+    <string name="about_google_play">Rate on Google play</string>
+    <string name="about_email">Feedback by E-mail</string>
+    <string name="about_git_hub">Source code on GitHub</string>
+    <string name="about_address">New Delhi, India</string>
+    <string name="about_source_licenses">Open source licenses</string>
+    <string name="share_with">Share with</string>
+
+    <!-- String related to Donate -->
+    <string name="activity_donate">Donations</string>
+    <string name="donate">Donate</string>
+    <string name="donated">Donated</string>
+    <string name="donate_title">I Would Be Very Grateful If You Could Donate Me ! </string>
+    <string name="donate_title_after">Thanks For Your Donations, I Am Very Grateful ! </string>
+    <string name="donate_low">1.99 USD</string>
+    <string name="donate_high">9.99 USD</string>
+    <string name="donate_exception">Sorry, can not do this!</string>
+
+    <!-- String related to Ad -->
+    <string name="banner_ad_title">Advertise</string>
+    <string name="banner_ad_loading">Ads loading …</string>
+    <string name="banner_ad_unit_id_donate" translatable="false">ca-app-pub-1251484082745159/2015219028</string>
+    <string name="native_ad_unit_id_main" translatable="false">ca-app-pub-1251484082745159/8449555424</string>
+    <string name="banner_ad_unit_id_main_card" translatable="false">ca-app-pub-1251484082745159/1419789825</string>
+    <string name="banner_ad_unit_id_main_dialog" translatable="false">ca-app-pub-1251484082745159/2227788617</string>
+    <string name="banner_ad_unit_id_main_widget" translatable="false">ca-app-pub-1251484082745159/3516394521</string>
+
+    <!-- String related to app short cuts -->
+    <string name="shortcut_label_recycler">Recycler View</string>
+    <string name="shortcut_label_scrolling">Scrolling</string>
+    <string name="shortcut_label_about">About</string>
+
+
+</resources>

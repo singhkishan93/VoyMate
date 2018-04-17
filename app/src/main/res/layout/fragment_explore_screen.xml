@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/blue_grey_primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        tools:ignore="RtlCompat">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/magazines"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="Monuments"
+                android:textAllCaps="false"
+                android:background="#393646"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@assets/Roboto"
+                 />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/magazines"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/igate" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_below="@+id/magazines"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/rajghat"
+                tools:ignore="RtlCompat" />
+
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/magazines"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/amarjwan"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageView2"
+                android:gravity="center"
+                android:text="Religious Places"
+                android:textAllCaps="false"
+                android:background="@color/bg_screen3"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@assets/Roboto"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView2"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/aksharsham"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView3"
+                android:layout_below="@+id/textView2"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/lotous"
+                tools:ignore="RtlCompat" />
+
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView5"
+                android:layout_below="@+id/textView2"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/gurudwara"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageView6"
+                android:gravity="center"
+                android:text="Mixed Bag"
+                android:textAllCaps="false"
+                android:background="@color/bg_screen1"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@assets/Roboto"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView3"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/taj"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView3"
+                android:layout_below="@+id/textView3"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/igi"
+                tools:ignore="RtlCompat" />
+
+
+            <ImageView
+                android:id="@+id/imageView13"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView5"
+                android:layout_below="@+id/textView3"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/rashtrapatinhawan"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageView10"
+                android:gravity="center"
+                android:text="Market and Shopping"
+                android:textAllCaps="false"
+                android:background="@color/bg_screen4"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@assets/Roboto"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView4"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/sarojni"
+                tools:ignore="RtlCompat" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView3"
+                android:layout_below="@+id/textView4"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/kmarket"
+                tools:ignore="RtlCompat" />
+
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="110dp"
+                android:layout_height="120dp"
+                android:layout_alignStart="@+id/imageView5"
+                android:layout_below="@+id/textView4"
+                android:background="#ffffff"
+                app:srcCompat="@drawable/janpathmarket"
+                tools:ignore="RtlCompat" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
