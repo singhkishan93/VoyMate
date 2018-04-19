@@ -8,6 +8,7 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/homeicon1"
+            app:itemBackground="@drawable/activated_item"
             android:title="Home" />
         <item
             android:id="@+id/nav_explore"
@@ -15,8 +16,15 @@
             app:itemBackground="@drawable/activated_item"
             android:title="Explore" />
         <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/navprofile"
+            app:itemBackground="@drawable/activated_item"
+            android:title="My Profile" />
+
+        <item
             android:id="@+id/nav_book"
             android:icon="@drawable/booktour"
+            app:itemBackground="@drawable/activated_item"
             android:title="Book Tour" />
         <item
             android:id="@+id/nav_nearby"
@@ -26,16 +34,18 @@
         <item
             android:id="@+id/nav_tool"
             android:icon="@drawable/ic_menu_manage"
+            app:itemBackground="@drawable/activated_item"
             android:title="Tools" />
 
-        <item
+        <!--<item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_menu_help_support"
-            android:title="Help" />
+            android:title="Help" />-->
 
         <item
            android:id="@+id/nav_about"
            android:icon="@drawable/ic_info_black_24dp"
+            app:itemBackground="@drawable/activated_item"
            android:title="About" />
     </group>
 

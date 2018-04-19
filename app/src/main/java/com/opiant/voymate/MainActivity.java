@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +29,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentTransaction mFragmentTransaction;
     private static MainActivity instance;
     Toolbar toolbar;
+    ImageView imageView;
     TextView userName,userEmail;
-    String Email;
+    String Email,Name,Image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,15 +91,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mFragmentTransaction.addToBackStack(null);
         mFragmentTransaction.commit();
 
+
         // Calling HeaderView Item and Making Click Listener on That
         SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
         Email= IdShared.getString("Email", "");
         View headerview = navigationView.getHeaderView(0);
         userName = (TextView) headerview.findViewById(R.id.name);
         userEmail = (TextView) headerview.findViewById(R.id.email);
+        imageView = (ImageView) headerview.findViewById(R.id.imageView);
         userEmail.setText(Email);
 
-        Toast.makeText(getApplicationContext(), "Welcome:"+Email, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
 
     }
 
@@ -195,12 +199,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             toolsTransaction.addToBackStack(null);
             toolsTransaction.commit();
         }
-        else if (id == R.id.nav_help){
-            Fragment help = new Help();
-            FragmentTransaction helpTransaction = getSupportFragmentManager().beginTransaction();
-            helpTransaction.replace(R.id.containerView1, help);
-            helpTransaction.addToBackStack(null);
-            helpTransaction.commit();
+        else if (id == R.id.nav_profile){
+            Fragment myProfile = new MyProfile();
+            FragmentTransaction myProfileTransaction = getSupportFragmentManager().beginTransaction();
+            myProfileTransaction.replace(R.id.containerView1, myProfile);
+            myProfileTransaction.addToBackStack(null);
+            myProfileTransaction.commit();
 
         }
         else if(id==R.id.nav_about){

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -19,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -91,6 +93,9 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
     Bundle b = getArguments();
     Intent callIntent;
     boolean isConnected = false;
+    private AnimationDrawable animationDrawable;
+    private RelativeLayout constraintLayout;
+
     public HomeScreen() {
         // Required empty public constructor
     }
@@ -143,6 +148,15 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
                     .addApi(Places.PLACE_DETECTION_API)
                     .enableAutoManage(getActivity(), this)
                     .build();
+           /* constraintLayout = (RelativeLayout) view.findViewById(R.id.rl);
+            // initializing animation drawable by getting background from constraint layout
+            animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+
+            // setting enter fade animation duration to 5 seconds
+            animationDrawable.setEnterFadeDuration(3000);
+
+            // setting exit fade animation duration to 2 seconds
+            animationDrawable.setExitFadeDuration(1000);*/
 
             getLocationPermission();
             searchPlace.setOnClickListener(new View.OnClickListener() {
@@ -500,6 +514,11 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
 
         if (mMap!=null){
             onMapReady(mMap);
+        }*/
+
+       /* if (animationDrawable != null && !animationDrawable.isRunning()) {
+            // start the animation
+            animationDrawable.start();
         }*/
     }
 

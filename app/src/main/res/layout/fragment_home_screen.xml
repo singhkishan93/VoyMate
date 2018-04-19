@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/blue_grey_primary"
+    android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -28,11 +29,13 @@
             android:fontFamily="@assets/Roboto"
             android:hint="Search Place Near By Delhi"
             android:cursorVisible="false"
+            android:editable="false"
             android:drawableRight="@drawable/search"
             android:layout_height="40dp"
             android:background="@drawable/round_edit"
             android:gravity="center"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            tools:ignore="Deprecated" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"

@@ -18,11 +18,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Locale;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -39,6 +38,7 @@ public class PlaceDetailsScreen extends Fragment {
     CircleImageView Listen;
     private OnFragmentInteractionListener mListener;
     int Id;
+    String moreTxt;
     Locale myLocale;
 
     public PlaceDetailsScreen() {
@@ -71,6 +71,7 @@ public class PlaceDetailsScreen extends Fragment {
         PlaceName = (TextView) view.findViewById(R.id.textView5);
         More = (TextView)view.findViewById(R.id.textView10);
         AboutPlace = (TextView)view.findViewById(R.id.aboutplace);
+        final ViewGroup.LayoutParams layoutparams = (RelativeLayout.LayoutParams) AboutPlace.getLayoutParams();
         /*Ratings = (TextView)view.findViewById(R.id.textView10);*/
         /*Submit = (Button) view.findViewById(R.id.submit);
         Ratingbar=(RatingBar)view.findViewById(R.id.ratingBar);
@@ -171,19 +172,41 @@ public class PlaceDetailsScreen extends Fragment {
             }
         });
 
-        More.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle b = new Bundle();
+        More.setText("View More");
+
+            More.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                /*Bundle b = new Bundle();
                 b.putInt("ID",Id);
                 Fragment exploreScreen = new LanguageSelection();
                 exploreScreen.setArguments(b);
                 FragmentTransaction exploreScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
                 exploreScreenTransaction.addToBackStack(null);
-                exploreScreenTransaction.commit();
-            }
-        });
+                exploreScreenTransaction.commit();*/
+                    moreTxt = More.getText().toString();
+                    //layoutparams.width = 400;
+                    if (moreTxt.equals("View More")) {
+                        layoutparams.height = 1000;
+                        AboutPlace.setLayoutParams(layoutparams);
+                        More.setText("View Less");
+                        moreTxt = "View Less";
+                    }
+                    else if (moreTxt.equals("View Less")){
+
+                        layoutparams.height = 150;
+                        AboutPlace.setLayoutParams(layoutparams);
+
+                        More.setText("View More");
+                    }
+
+                }
+            });
+
+
+
+
 
         return view;
     }

@@ -1,9 +1,11 @@
 package com.opiant.voymate;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.AnimationDrawable;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -70,6 +72,8 @@ public class NearBy extends Fragment{
     private int PROXIMITY_RADIUS = 1000;
     private final static int MY_PERMISSION_FINELOCATION = 101;
     String cityname, address, address1, city, country, postalCode, state,HelpKey;
+    private AnimationDrawable animationDrawable;
+    private RelativeLayout constraintLayout;
 
     public NearBy() {
         // Required empty public constructor
@@ -99,6 +103,16 @@ public class NearBy extends Fragment{
 
 
            view = inflater.inflate(R.layout.fragment_near_by, container, false);
+
+        /*constraintLayout = (RelativeLayout) view.findViewById(R.id.rl);
+        // initializing animation drawable by getting background from constraint layout
+        animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+
+        // setting enter fade animation duration to 5 seconds
+        animationDrawable.setEnterFadeDuration(5000);
+
+        // setting exit fade animation duration to 2 seconds
+        animationDrawable.setExitFadeDuration(2000);*/
 
         CircleImageView Atm = (CircleImageView)view.findViewById(R.id.atm);
         CircleImageView Bank = (CircleImageView)view.findViewById(R.id.banks);
@@ -176,6 +190,23 @@ public class NearBy extends Fragment{
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onResume() {
+        super.onResume();
+      /*MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.fr_map);
+        mapFragment.getMapAsync(this);
+
+        if (mMap!=null){
+            onMapReady(mMap);
+        }*/
+
+       /* if (animationDrawable != null && !animationDrawable.isRunning()) {
+            // start the animation
+            animationDrawable.start();
+        }*/
     }
 
 

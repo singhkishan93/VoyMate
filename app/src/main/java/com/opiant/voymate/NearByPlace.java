@@ -17,6 +17,8 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +27,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -62,11 +65,12 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
     boolean isConnected = false;
     private final static int MY_PERMISSION_FINELOCATION = 101;
     String cityname, address, address1, city, country, postalCode, state,HelpKey,Key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_near_by_place);
-
+        TextView Back = findViewById(R.id.backtext);
         mGoogleApiClient = new GoogleApiClient
                 .Builder(getApplicationContext())
                 .addApi(Places.GEO_DATA_API)
@@ -81,6 +85,19 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
         mapFragment.getMapAsync(this);
+
+        Back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
+                Fragment nearBy = new NearBy();
+                FragmentTransaction aboutTransaction = getSupportFragmentManager().beginTransaction();
+                aboutTransaction.replace(R.id.containerView1, nearBy);
+                aboutTransaction.addToBackStack(null);
+                aboutTransaction.commit();
+            }
+        });
 
     }
 

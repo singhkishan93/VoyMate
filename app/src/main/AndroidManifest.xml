@@ -37,6 +37,10 @@
         <!-- <activity android:name=".ReaderListener" /> -->
 
         <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC70_u7u0Ca8F8pjfR_cmY4asbNv1H9jmE" />
 

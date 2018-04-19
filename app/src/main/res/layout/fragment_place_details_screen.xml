@@ -12,7 +12,6 @@
         android:background="@drawable/layback"
         >
 
-
         <ImageView
             android:id="@+id/imageView18"
             android:layout_width="match_parent"
@@ -85,14 +84,16 @@
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
 -->
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/listen"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="27dp"
-            android:src="@drawable/listen"
+            android:src="@drawable/highvolume"
+            android:background="@drawable/circular_border"
             app:civ_border_color="@color/bg_screen1"
             tools:ignore="RtlCompat" />
 
@@ -102,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/imageView18"
             android:layout_centerHorizontal="true"
-            android:text="xxxxxxxxxxxxx"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold|italic" />
@@ -110,7 +111,7 @@
         <TextView
             android:id="@+id/aboutplace"
             android:layout_width="match_parent"
-            android:layout_height="104dp"
+            android:layout_height="100dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="124dp"
@@ -129,7 +130,7 @@
             android:layout_marginBottom="115dp"
             android:layout_marginEnd="15dp"
             android:gravity="center"
-            android:text="View More"
+            android:text=""
             android:textColor="@color/black"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />

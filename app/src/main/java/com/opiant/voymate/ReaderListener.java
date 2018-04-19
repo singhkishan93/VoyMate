@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-
 import java.util.Locale;
 
 public class ReaderListener extends Fragment implements TextToSpeech.OnInitListener {
@@ -112,8 +111,12 @@ public class ReaderListener extends Fragment implements TextToSpeech.OnInitListe
             }
         }
 
-        speakOut();
-        //setSpeed();
+        if (favlang!=null){
+
+            speakOut();
+            //setSpeed();
+        }
+
 
         /*btnSpeak.setOnClickListener(new View.OnClickListener() {
 

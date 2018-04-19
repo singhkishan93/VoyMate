@@ -43,11 +43,11 @@ public class Splash extends AwesomeSplash {
 
         //Customize Title
         configSplash.setTitleSplash("VOYMATE");
-        configSplash.setTitleTextColor(R.color.list_unselected);
-        configSplash.setTitleTextSize(20f); //float value
+        configSplash.setTitleTextColor(R.color.black);
+        configSplash.setTitleTextSize(25f); //float value
         configSplash.setAnimTitleDuration(3000);
         configSplash.setAnimTitleTechnique(Techniques.FlipInX);
-        configSplash.setTitleFont("fonts/Roboto.ttf"); //provide string to your font located in assets/fonts/
+        configSplash.setTitleFont("fonts/Roboto-Bold.ttf"); //provide string to your font located in assets/fonts/
     }
 
     @Override
