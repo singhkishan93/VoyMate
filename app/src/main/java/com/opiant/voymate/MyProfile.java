@@ -1,6 +1,10 @@
 package com.opiant.voymate;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,10 +15,15 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.facebook.login.LoginManager;
 import com.opiant.voymate.utils.AppUtils;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class MyProfile extends Fragment {
@@ -24,6 +33,7 @@ public class MyProfile extends Fragment {
     private String mParam1;
     private String mParam2;
     View view;
+    ImageView Logout;
     private OnFragmentInteractionListener mListener;
 
     public MyProfile() {
@@ -54,8 +64,46 @@ public class MyProfile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_my_profile, container, false);
+        Logout = view.findViewById(R.id.logout);
+
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                SharedPreferences sp = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                SharedPreferences.Editor ueditor = sp.edit();
+                ueditor.putString("email","");
+                ueditor.apply();
+                startActivity(intent);
+                //performLogout();
+
+            }
+        });
 
         return view;
+    }
+
+    protected void performLogout() {
+
+        // Create a confirmation dialog
+        String logout = getResources().getString(com.facebook.R.string.com_facebook_loginview_log_out_action);
+        String cancel = getResources().getString(com.facebook.R.string.com_facebook_loginview_cancel_action);
+        String message;
+
+
+        message = getResources().getString(R.string.logout_message);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton(logout, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        LoginManager.getInstance().logOut();
+
+
+                    }
+                })
+                .setNegativeButton(cancel, null);
+        builder.create().show();
     }
 
 

@@ -24,7 +24,7 @@
             android:layout_height="128dp"
             android:background="@color/brown_primary"
             android:scaleType="centerInside"
-            android:src="@drawable/droid" />
+            android:src="@drawable/appicon" />
 
         <RelativeLayout
             android:layout_width="wrap_content"

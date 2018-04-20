@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent dataIntent = getIntent();
         Bundle bundle = dataIntent.getExtras();
         if (bundle!=null) {
-            Email = bundle.getString("Email");
+            Email = bundle.getString("email");
         }
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -185,11 +185,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_share) {
 
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, Constant.SHARE_CONTENT);
             sharingIntent.setType("text/plain");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Download My App");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Android app:-\n https://play.google.com/store/apps/details?id=Orion.Soft \n\n");
-            sharingIntent.putExtra(android.content.Intent.EXTRA_STREAM, "YouTube Video:-\n https://youtu.be/VkfchLM144Q");
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_with)));
+            //startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
         } else if (id == R.id.nav_tool) {
 

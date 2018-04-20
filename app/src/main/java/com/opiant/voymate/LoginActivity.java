@@ -46,10 +46,14 @@ public class LoginActivity extends AppCompatActivity {
     private static final String EMAIL = "email";
     CallbackManager callbackManager;
     String id,personGivenName,personFamilyName,personEmail,personId,birthday,android_id;
+    Bundle bundle;
+    SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
+    //initializing editor
+    SharedPreferences.Editor editor = passwordPref.edit();
 
 
-    private final Pattern VALID_EMAIL_ADDRESS_REGEX =
-            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+    private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     String Email = "voymateapp@android.com", Password = "voymate",userName="VoyMate";
 
@@ -86,15 +90,13 @@ public class LoginActivity extends AppCompatActivity {
                 else {
 
                     if (username.equals(Email)&& password.equals(Password)) {
-                        Bundle b = new Bundle();
-                        b.putString("Email", username);
-                        SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
-                        //initializing editor
-                        SharedPreferences.Editor editor = passwordPref.edit();
-                        editor.putString("Email", username);
+                        bundle = new Bundle();
+                        bundle.putString("email", username);
+
+                        editor.putString("email", username);
                         editor.apply();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        intent.putExtras(b);
+                        intent.putExtras(bundle);
                         startActivity(intent);
                         finish();
                     }
@@ -214,13 +216,24 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         }
 
-                        Bundle b = new Bundle();
-                        b.putString("myname", FullName);
-                        b.putString("email", Email);
-                        b.putString("uri", Image);
+                        /*bundle = new Bundle();
+                        bundle.putString("myname", FullName);
+                        bundle.putString("email", Email);
+                        bundle.putString("uri", Image);
                         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        intent.putExtras(b);
+                        intent.putExtras(bundle);
+                        startActivity(intent);*/
+
+                        bundle = new Bundle();
+                        bundle.putString("email", Email);
+
+                        editor.putString("myname", FullName);
+                        editor.putString("email", Email);
+                        editor.apply();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        intent.putExtras(bundle);
                         startActivity(intent);
+                        finish();
 
 
 

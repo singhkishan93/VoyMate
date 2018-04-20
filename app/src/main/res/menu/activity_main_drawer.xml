@@ -46,7 +46,7 @@
            android:id="@+id/nav_about"
            android:icon="@drawable/ic_info_black_24dp"
             app:itemBackground="@drawable/activated_item"
-           android:title="About" />
+           android:title="About App" />
     </group>
 
     <item android:title="">
