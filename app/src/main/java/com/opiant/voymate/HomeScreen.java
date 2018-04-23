@@ -484,6 +484,9 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
                                 .title(address)
                                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.mark_blue)));
 
+                        Intent intent = new Intent(getContext(),MainActivity.class);
+                        startActivity(intent);
+
                     }
                     else {
                         Toast.makeText(getActivity(), "permission denied", Toast.LENGTH_LONG).show();

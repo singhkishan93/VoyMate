@@ -33,7 +33,8 @@ public class MyProfile extends Fragment {
     private String mParam1;
     private String mParam2;
     View view;
-    ImageView Logout;
+    TextView Logout;
+    String isFB,userEmail;
     private OnFragmentInteractionListener mListener;
 
     public MyProfile() {
@@ -65,17 +66,27 @@ public class MyProfile extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_my_profile, container, false);
         Logout = view.findViewById(R.id.logout);
+        SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+        userEmail = IdShared.getString("email", "");
+        isFB = IdShared.getString("isFB", "");
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), LoginActivity.class);
-                SharedPreferences sp = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
-                SharedPreferences.Editor ueditor = sp.edit();
-                ueditor.putString("email","");
-                ueditor.apply();
-                startActivity(intent);
-                //performLogout();
+
+                if (isFB.equals("yes")){
+
+                    performLogout();
+                }
+                else {
+                    Intent intent = new Intent(getContext(), LoginActivity.class);
+                    SharedPreferences sp = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    SharedPreferences.Editor ueditor = sp.edit();
+                    ueditor.putString("email", "");
+                    ueditor.apply();
+                    startActivity(intent);
+                    //performLogout();
+                }
 
             }
         });
@@ -98,7 +109,13 @@ public class MyProfile extends Fragment {
                 .setPositiveButton(logout, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         LoginManager.getInstance().logOut();
-
+                        SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = passwordPref.edit();
+                        editor.putString("email", "");
+                        editor.putString("isFB", "no");
+                        editor.apply();
+                        Intent intent = new Intent(getContext(),LoginActivity.class);
+                        startActivity(intent);
 
                     }
                 })

@@ -57,7 +57,7 @@ public class About extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       view = inflater.inflate(R.layout.fragment_about, container, false);
+        view = inflater.inflate(R.layout.fragment_about, container, false);
         initView();
         return view;
     }

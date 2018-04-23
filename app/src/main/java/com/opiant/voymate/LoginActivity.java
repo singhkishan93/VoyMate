@@ -47,9 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     String id,personGivenName,personFamilyName,personEmail,personId,birthday,android_id;
     Bundle bundle;
-    SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
-    //initializing editor
-    SharedPreferences.Editor editor = passwordPref.edit();
+
 
 
 
@@ -61,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        callbackManager = CallbackManager.Factory.create();
         Intent in = getIntent();
         //Getting bundle
         Bundle b = in.getExtras();
@@ -92,8 +90,12 @@ public class LoginActivity extends AppCompatActivity {
                     if (username.equals(Email)&& password.equals(Password)) {
                         bundle = new Bundle();
                         bundle.putString("email", username);
-
+                        bundle.putString("myname", "VoyMate App");
+                        SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
+                        //initializing editor
+                        SharedPreferences.Editor editor = passwordPref.edit();
                         editor.putString("email", username);
+                        editor.putString("myname", "VoyMate App");
                         editor.apply();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtras(bundle);
@@ -114,9 +116,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        callbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.fblogin);
-        loginButton.setReadPermissions("public_profile");
+        loginButton.setReadPermissions("email","public_profile");
+
         boolean loggedIn = AccessToken.getCurrentAccessToken() == null;
 
         // Callback registration
@@ -136,6 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                         String Lname = bFacebookData.getString("last_name");
                         String Image = bFacebookData.getString("profile_pic");
                         String FullName = Fname+" "+Lname;
+
 
                         if (object.has("work")){
                             try {
@@ -226,9 +229,12 @@ public class LoginActivity extends AppCompatActivity {
 
                         bundle = new Bundle();
                         bundle.putString("email", Email);
-
+                        bundle.putString("isFB","yes");
+                        SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = passwordPref.edit();
                         editor.putString("myname", FullName);
                         editor.putString("email", Email);
+                        editor.putString("isFB", "yes");
                         editor.apply();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtras(bundle);
@@ -241,7 +247,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
                 // Parámetros que pedimos a facebook
                 Bundle parameters = new Bundle();
-                parameters.putString("fields", "id, relationship_status, name, first_name, last_name, email,gender, link,birthday, location,education,work,likes,photos");
+                parameters.putString("fields", "id, email, relationship_status, name, first_name, last_name,gender, link,birthday, location,education,work,likes,photos");
                 request.setParameters(parameters);
                 request.executeAsync();
             }
@@ -317,8 +323,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+
 
     }
 

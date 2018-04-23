@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Bundle bundle = dataIntent.getExtras();
         if (bundle!=null) {
             Email = bundle.getString("email");
+            Name = bundle.getString("myname");
         }
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, Email, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });*/
 
@@ -94,12 +94,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         // Calling HeaderView Item and Making Click Listener on That
         SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
-        Email= IdShared.getString("Email", "");
+        Email= IdShared.getString("email", "");
+        Name= IdShared.getString("myname", "");
         View headerview = navigationView.getHeaderView(0);
         userName = (TextView) headerview.findViewById(R.id.name);
         userEmail = (TextView) headerview.findViewById(R.id.email);
         imageView = (ImageView) headerview.findViewById(R.id.imageView);
         userEmail.setText(Email);
+        userName.setText(Name);
 
         Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
 
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (id==R.id.nav_logout){
             SharedPreferences sp = getSharedPreferences("VoyMate", MODE_PRIVATE);
             SharedPreferences.Editor ueditor = sp.edit();
-            ueditor.putString("Email","");
+            ueditor.putString("email","");
             ueditor.apply();
 
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);

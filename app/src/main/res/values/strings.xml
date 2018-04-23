@@ -59,7 +59,7 @@
     <string name="dillihaatspanish">"Dilli Haat es una plaza de comida al aire libre de pago y un bazar artesanal ubicado en Delhi, administrado por la Corporación para el Desarrollo del Turismo y el Transporte de Delhi (DTTDC). A diferencia del mercado semanal tradicional, el pueblo Haat, Dilli Haat es permanente. Está ubicado en los centros comerciales del sur de Delhi, frente al mercado INA. Los 6 acres de tierra en los que se encuentra este complejo se rescataron como parte de un proyecto de recuperación y se transformaron en una plaza. El amplio trabajo de cimentación, las cabañas con techos de paja y los kioscos le dan a la plaza un ambiente de pueblo. Algunas tiendas son permanentes, pero otros vendedores rotan, generalmente durante quince días. En la sala de exposiciones del complejo se llevan a cabo varios espectáculos de promoción de artesanías y telares manuales. En total, Dilli Haat, INA Market tiene 62 puestos."</string>
     >
     <string name="logout_message">Are you sure you want to logout?</string>
-    <string name="facebook_app_id">181852772578075</string>
+    <string name="facebook_app_id">134565184063908</string>
     <string-array name="languages">
         <item>Select language</item>
         <!-- <item>日本語</item>-->
@@ -355,5 +355,5 @@
     <string name="shortcut_label_scrolling">Scrolling</string>
     <string name="shortcut_label_about">About</string>
 
-
+    <string name="fb_login_protocol_scheme">fb134565184063908</string>
 </resources>

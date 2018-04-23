@@ -32,7 +32,7 @@
             android:editable="false"
             android:drawableRight="@drawable/search"
             android:layout_height="40dp"
-            android:background="@drawable/round_edit"
+            android:background="@color/white"
             android:gravity="center"
             android:layout_width="match_parent"
             tools:ignore="Deprecated" />

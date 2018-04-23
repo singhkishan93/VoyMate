@@ -54,7 +54,7 @@ public class Splash extends AwesomeSplash {
     public void animationsFinished() {
 
         SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
-        final String userEmail = IdShared.getString("Email", "");
+        final String userEmail = IdShared.getString("email", "");
 
         if (!userEmail.equals("")){
             Intent intent = new Intent(Splash.this, MainActivity.class);

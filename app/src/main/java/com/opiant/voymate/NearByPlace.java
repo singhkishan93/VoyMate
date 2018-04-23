@@ -90,12 +90,15 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
 
-                //Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
+                /*//Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
                 Fragment nearBy = new NearBy();
                 FragmentTransaction aboutTransaction = getSupportFragmentManager().beginTransaction();
                 aboutTransaction.replace(R.id.containerView1, nearBy);
                 aboutTransaction.addToBackStack(null);
-                aboutTransaction.commit();
+                aboutTransaction.commit();*/
+
+                Intent intent1 = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent1);
             }
         });
 

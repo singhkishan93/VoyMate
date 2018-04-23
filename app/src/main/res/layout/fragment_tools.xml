@@ -16,7 +16,7 @@
             android:id="@+id/listen"
             android:layout_width="104dp"
             android:layout_height="122dp"
-            android:src="@drawable/listen"
+            android:src="@drawable/lang"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="15dp"
             app:civ_border_color="@color/bg_screen1" />
@@ -30,6 +30,29 @@
             android:layout_marginEnd="58dp"
             android:src="@drawable/currency"
             app:civ_border_color="@color/bg_screen1"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/listen"
+            android:layout_marginTop="172dp"
+            android:text="Change Language"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/currency"
+            android:layout_alignTop="@+id/textView15"
+            android:text="Convert Currency"
+            android:textSize="18dp"
+            android:textColor="@color/white"
             tools:ignore="RtlCompat" />
 
     </RelativeLayout>
