@@ -33,8 +33,9 @@ public class MyProfile extends Fragment {
     private String mParam1;
     private String mParam2;
     View view;
-    TextView Logout;
-    String isFB,userEmail;
+    ImageView profilePic;
+    String isFB,userEmail,userName;
+    TextView Name,Email,Mobile,Language,Logout;
     private OnFragmentInteractionListener mListener;
 
     public MyProfile() {
@@ -66,9 +67,26 @@ public class MyProfile extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_my_profile, container, false);
         Logout = view.findViewById(R.id.logout);
+        Name = view.findViewById(R.id.user_profile_name);
+        Email = view.findViewById(R.id.user_email);
+        Language = view.findViewById(R.id.lang);
+        Mobile = view.findViewById(R.id.mobile);
+        profilePic = view.findViewById(R.id.user_profile_photo);
+
         SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
         userEmail = IdShared.getString("email", "");
+        userName = IdShared.getString("myname", "");
         isFB = IdShared.getString("isFB", "");
+
+        Name.setText(userName);
+        Email.setText(userEmail);
+        Language.setText("English");
+        Mobile.setText("9599367430");
+
+        if (isFB.equals("no")){
+
+          profilePic.setImageResource(R.drawable.appicon);
+        }
 
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override

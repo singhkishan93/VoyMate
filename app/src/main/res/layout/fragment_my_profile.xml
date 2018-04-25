@@ -61,19 +61,19 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="76dp"
-                android:text="VoyMate App"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/user_profile_short_bio"
+                android:id="@+id/user_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/user_profile_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
-                android:text="voymateapp@android.com"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="14sp" />
         </RelativeLayout>
@@ -94,6 +94,36 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
+                android:hint="@string/mnumber"
+                android:id="@+id/mobile"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:hint="@string/nativelang"
+                android:id="@+id/lang"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:text="" />
+
+          <!--  <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:elevation="4dp"
+                android:padding="20dp"
                 android:text="Android Profile UI Design" />
 
             <TextView
@@ -106,29 +136,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Android Profile XMl UI Design" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@color/white"
-                android:clickable="true"
-                android:elevation="4dp"
-                android:padding="20dp"
-                android:text="Android Profile UI Design" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginTop="3dp"
-                android:background="@color/white"
-                android:clickable="true"
-                android:elevation="4dp"
-                android:padding="20dp"
-                android:text="Android Profile XMl UI Design" />
+                android:text="Android Profile XMl UI Design" />-->
 
             <TextView
                 android:id="@+id/logout"
@@ -140,6 +148,8 @@
                 android:elevation="4dp"
                 android:padding="20dp"
                 android:drawableRight="@drawable/ic_menu_logout"
+                android:textColor="@color/black"
+                android:textSize="18dp"
                 android:text="Logout" />
 
 

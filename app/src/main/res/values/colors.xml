@@ -76,7 +76,7 @@
     <color name="grey_primary_dark">#616161</color>
     <color name="blue_grey_primary">#607D8B</color>
     <color name="blue_grey_primary_dark">#455A64</color>
-
+    <color name="window_background">#f5f5f5</color>
     <!-- Google Logo Color -->
     <color name="google_blue">#4285F4</color>
     <color name="google_green">#34A853</color>

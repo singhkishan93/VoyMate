@@ -15,7 +15,18 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- Style for expanded text in toolbar(see activity_place_description.xml for usage) -->
+    <style name="WhiteText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <!-- Style for collapsed text in toolbar(see activity_place_description.xml for usage) -->
+    <style name="BlackText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title"> </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+
+    </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 

@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/listen"
             android:layout_width="104dp"
             android:layout_height="122dp"
-            android:src="@drawable/lang"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="29dp"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="15dp"
+            android:src="@drawable/lang"
             app:civ_border_color="@color/bg_screen1" />
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -27,7 +28,7 @@
             android:layout_height="122dp"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/listen"
-            android:layout_marginEnd="58dp"
+            android:layout_marginEnd="50dp"
             android:src="@drawable/currency"
             app:civ_border_color="@color/bg_screen1"
             tools:ignore="RtlCompat" />
@@ -36,23 +37,25 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/listen"
-            android:layout_marginTop="172dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="173dp"
             android:text="Change Language"
-            android:textSize="18dp"
             android:textColor="@color/white"
+            android:textSize="18dp"
             tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/currency"
+            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/textView15"
+            android:layout_marginEnd="27dp"
             android:text="Convert Currency"
-            android:textSize="18dp"
             android:textColor="@color/white"
+            android:textSize="18dp"
             tools:ignore="RtlCompat" />
 
     </RelativeLayout>

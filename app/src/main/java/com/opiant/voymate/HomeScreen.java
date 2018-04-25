@@ -410,6 +410,7 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
                     state = locationAddress.getAdminArea();
                     country = locationAddress.getCountryName();
                     postalCode = locationAddress.getPostalCode();
+                    int desc = locationAddress.describeContents();
                     //float rating = locationAddress.getRating();
 
 

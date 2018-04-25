@@ -11,14 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link PlaceListScreen.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link PlaceListScreen#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class PlaceListScreen extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";

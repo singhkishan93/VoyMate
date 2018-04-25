@@ -87,13 +87,12 @@
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/listen"
-            android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="27dp"
             android:src="@drawable/headphones"
-            android:background="@drawable/circular_border"
             app:civ_border_color="@color/bg_screen1"
             tools:ignore="RtlCompat" />
 
@@ -127,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="115dp"
+            android:layout_marginBottom="110dp"
             android:layout_marginEnd="15dp"
             android:gravity="center"
             android:text=""
@@ -158,6 +157,15 @@
             android:text=" 5 "
             android:textSize="14dp"
             android:textColor="@color/white"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/listen"
+            android:layout_toStartOf="@+id/textView10"
+            android:text=""
             tools:ignore="RtlCompat" />
 
         <!--<RatingBar

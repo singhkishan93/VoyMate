@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +31,7 @@ public class PlaceDetailsScreen extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    TextView Sight, Ratings,PlaceName,More,AboutPlace;
+    TextView Sight, Ratings,PlaceName,More,AboutPlace,KnowMore;
     ImageView PlaceImage;
     Button Submit;
     RatingBar Ratingbar;
@@ -70,35 +72,51 @@ public class PlaceDetailsScreen extends Fragment {
         PlaceImage = (ImageView) view.findViewById(R.id.imageView18);
         PlaceName = (TextView) view.findViewById(R.id.textView5);
         More = (TextView)view.findViewById(R.id.textView10);
+        KnowMore = (TextView)view.findViewById(R.id.more);
         AboutPlace = (TextView)view.findViewById(R.id.aboutplace);
         final ViewGroup.LayoutParams layoutparams = (RelativeLayout.LayoutParams) AboutPlace.getLayoutParams();
         /*Ratings = (TextView)view.findViewById(R.id.textView10);*/
         /*Submit = (Button) view.findViewById(R.id.submit);
         Ratingbar=(RatingBar)view.findViewById(R.id.ratingBar);
         Ratings.setVisibility(View.INVISIBLE);*/
+        KnowMore.setClickable(true);
+        KnowMore.setMovementMethod(LinkMovementMethod.getInstance());
+
+        String mainURl = "https://en.wikipedia.org/wiki/";
+        String placeName ="red_fort";
+        String a = "<a href='";
+        String b = "'> Know More </a>";
+        String finalURl = mainURl+placeName;
+
+
         Bundle bundle = getArguments();
         Id = bundle.getInt("ID");
 
         if (Id==1){
-
+            //String text = "<a href='https://en.wikipedia.org/wiki/red_fort'> Know More </a>";'https://en.wikipedia.org/wiki/red_fort'> Know More </a>"
+            String text = a+finalURl+b;
+            KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.redfort);
             PlaceName.setText("Red Fort");
             AboutPlace.setText(R.string.english);
         }
         else if (Id==2){
-
+            String text = "<a href='https://en.wikipedia.org/wiki/Akshardham_(Delhi)'> Know More </a>";
+            KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.aksharsham);
             PlaceName.setText("Akshardham");
             AboutPlace.setText(R.string.akenglish);
         }
         else if (Id==3){
-
+            String text = "<a href='https://en.wikipedia.org/wiki/taj_mahal'> Know More </a>";
+            KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.taj);
             PlaceName.setText("Taj Mahal");
             AboutPlace.setText(R.string.tajenglish);
         }
         else if (Id==4){
-
+            String text = "<a href='https://en.wikipedia.org/wiki/Dilli_Haat'> Know More </a>";
+            KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.sarojni);
             PlaceName.setText("Dilli Haat");
             AboutPlace.setText(R.string.dillihaatenglish);
