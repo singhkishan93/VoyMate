@@ -1,12 +1,10 @@
-package com.opiant.voymate;
+package com.opiant.voymate.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.provider.SyncStateContract;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
 import com.daimajia.androidanimations.library.Techniques;
+import com.opiant.voymate.R;
 import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;
 import com.viksaa.sssplash.lib.model.ConfigSplash;

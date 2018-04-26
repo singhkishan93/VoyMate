@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Build;

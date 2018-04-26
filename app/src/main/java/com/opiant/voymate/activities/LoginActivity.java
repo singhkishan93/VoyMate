@@ -1,11 +1,9 @@
-package com.opiant.voymate;
+package com.opiant.voymate.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,12 +19,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
+import com.opiant.voymate.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,12 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     String id,personGivenName,personFamilyName,personEmail,personId,birthday,android_id;
     Bundle bundle;
-
-
-
-
     private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-
     String Email = "voymateapp@android.com", Password = "voymate",userName="VoyMate";
 
     @Override

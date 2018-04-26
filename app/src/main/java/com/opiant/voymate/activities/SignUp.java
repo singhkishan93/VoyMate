@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -16,7 +16,8 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.opiant.voymate.R;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

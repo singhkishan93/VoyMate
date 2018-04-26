@@ -1,7 +1,5 @@
-package com.opiant.voymate;
+package com.opiant.voymate.fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.Toast;
+
+import com.opiant.voymate.CurrencyConvert;
+import com.opiant.voymate.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

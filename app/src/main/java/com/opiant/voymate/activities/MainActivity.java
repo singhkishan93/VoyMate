@@ -1,10 +1,8 @@
-package com.opiant.voymate;
+package com.opiant.voymate.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -17,13 +15,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.internal.Utility;
+import com.opiant.voymate.Constant;
+import com.opiant.voymate.R;
+import com.opiant.voymate.fragments.About;
+import com.opiant.voymate.fragments.ExploreScreen;
+import com.opiant.voymate.fragments.HomeScreen;
+import com.opiant.voymate.fragments.MyProfile;
+import com.opiant.voymate.fragments.NearBy;
+import com.opiant.voymate.fragments.Settings;
+import com.opiant.voymate.fragments.Tools;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

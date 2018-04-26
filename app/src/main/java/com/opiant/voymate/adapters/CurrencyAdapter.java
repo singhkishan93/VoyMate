@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.opiant.voymate.R;
+import com.opiant.voymate.activities.ConvertActivity;
 
 import java.util.ArrayList;
 import java.util.Locale;

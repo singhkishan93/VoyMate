@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Splash"
+            android:name=".activities.Splash"
             android:label="@string/app_name"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar">
@@ -31,10 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppIntroSlider" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".activities.AppIntroSlider" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.SignupActivity" />
+        <activity android:name=".activities.LoginActivity" />
         <!-- <activity android:name=".ReaderListener" /> -->
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
@@ -50,12 +50,12 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC70_u7u0Ca8F8pjfR_cmY4asbNv1H9jmE" />
 
-        <activity android:name=".ConvertActivity" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".NearByPlace" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".EmailVerification" />
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".activities.ConvertActivity" />
+        <activity android:name=".activities.SplashScreen" />
+        <activity android:name=".activities.NearByPlace" />
+        <activity android:name=".activities.SignUp" />
+        <activity android:name=".activities.EmailVerification" />
+        <activity android:name=".activities.ForgotPassword"></activity>
     </application>
 
 </manifest>

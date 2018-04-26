@@ -1,8 +1,7 @@
-package com.opiant.voymate;
+package com.opiant.voymate.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -20,6 +19,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.opiant.voymate.R;
 
 import java.io.File;
 import java.io.FileWriter;

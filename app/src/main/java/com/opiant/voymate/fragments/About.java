@@ -1,7 +1,5 @@
-package com.opiant.voymate;
+package com.opiant.voymate.fragments;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,13 +11,13 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.opiant.voymate.Constant;
+import com.opiant.voymate.R;
 import com.opiant.voymate.utils.AppUtils;
 
 
