@@ -3,7 +3,7 @@
     package="com.opiant.voymate">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -37,14 +37,14 @@
         <activity android:name=".activities.LoginActivity" />
         <!-- <activity android:name=".ReaderListener" /> -->
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -55,7 +55,8 @@
         <activity android:name=".activities.NearByPlace" />
         <activity android:name=".activities.SignUp" />
         <activity android:name=".activities.EmailVerification" />
-        <activity android:name=".activities.ForgotPassword"></activity>
+        <activity android:name=".activities.ForgotPassword" />
+        <activity android:name=".activities.PlacesOnMap"></activity>
     </application>
 
 </manifest>

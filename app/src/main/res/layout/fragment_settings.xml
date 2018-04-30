@@ -7,52 +7,76 @@
     tools:context=".fragments.Settings">
 
 
+    <!--<TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:padding="20dp"
+        android:hint="@string/mnumber"
+        android:id="@+id/mobile"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:text="" />-->
+
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="44dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text="Change Password"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
-        android:textColor="@color/list_unselected"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15dp"
         android:gravity="left|center"
-        android:drawableRight="@drawable/lefticon"
+        android:drawableRight="@drawable/icon_forward"
+        android:background="@color/white"
         tools:ignore="RtlCompat" />
 
     <Switch
         android:id="@+id/notification"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="109dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text="Allow Notification"
-        android:textColor="@color/list_unselected"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15dp"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
+        android:background="@color/white"
         tools:ignore="RtlCompat" />
 
    <TextView
         android:id="@+id/report"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="171dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text="Report a problem"
         android:paddingStart="5dp"
         android:paddingEnd="5dp"
-        android:textColor="@color/list_unselected"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="15dp"
         android:gravity="left|center"
-        android:drawableRight="@drawable/lefticon"
+        android:background="@color/white"
+        android:drawableRight="@drawable/icon_forward"
         tools:ignore="RtlCompat" />
 </RelativeLayout>

@@ -24,7 +24,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -46,31 +45,23 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+public class PlacesOnMap extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, LocationListener, View.OnClickListener {
 
-import static android.support.v4.content.ContextCompat.checkSelfPermission;
-
-public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, LocationListener {
     private int PROXIMITY_RADIUS = 1000;
-    private int PLACE_PICKER_REQUEST = 1;
     private boolean mLocationPermissionGranted;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    EditText searchPlace;
-    CircleImageView Restaurent, Hotel, Shopping, Activities, Sights, SOS;
-    private GoogleApiClient mGoogleApiClient;
-    double mlatitude = 0.0, mlongitude = 0.0, sLatitude = 0.0, sLongitude = 0.0;
+    double mlatitude = 0.0, mlongitude = 0.0, sLatitude=0.0,sLongitude=0.0;
     private GoogleMap mMap;
-    SupportMapFragment mapFragment;
     Location location;
     boolean isConnected = false;
+    private GoogleApiClient mGoogleApiClient;
     private final static int MY_PERMISSION_FINELOCATION = 101;
-    String cityname, address, address1, city, country, postalCode, state, HelpKey, Key;
+    String cityname, address, address1, city, country, postalCode, state,HelpKey,Key,cityName;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_near_by_place);
+        setContentView(R.layout.activity_places_on_map);
         TextView Back = findViewById(R.id.backtext);
         mGoogleApiClient = new GoogleApiClient
                 .Builder(getApplicationContext())
@@ -78,7 +69,6 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
                 .addApi(Places.PLACE_DETECTION_API)
                 .enableAutoManage(this, this)
                 .build();
-        getLocationPermission();
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -88,15 +78,6 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fr_map);
         mapFragment.getMapAsync(this);
-
-        Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent1);
-            }
-        });
-
     }
 
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
@@ -132,23 +113,35 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
 
 
     @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        /*LatLng sydney = new LatLng(28.4959, 77.1848);
-        googleMap.addMarker(new MarkerOptions().position(sydney)
-                .title("You are here"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
-        String url = getUrl(28.4959, 77.1848, Key);
-        Object[] DataTransfer = new Object[2];
-        DataTransfer[0] = googleMap;
-        DataTransfer[1] = url;
-        Log.d("onClick", url);
-        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData(getApplicationContext());
-        getNearbyPlacesData.execute(DataTransfer);*/
-
         mMap = googleMap;
-        if (mMap != null) {
+        if (mMap!=null){
             mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 
                 @Override
@@ -168,27 +161,34 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
             });
 
         }
-
         if (mLocationPermissionGranted == true) {
-
-            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ) {
                 mMap.setMyLocationEnabled(true);
-                //mMap.setTrafficEnabled(true);
             }
-
         }
 
-        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = geocoder.getFromLocation(sLatitude, sLongitude, 1);
+            cityName = addresses.get(0).getAddressLine(0);
+            //String stateName = addresses.get(0).getAddressLine(1);
+            //String countryName = addresses.get(0).getAddressLine(2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        LocationManager locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         String bestProvider = locationManager.getBestProvider(criteria, true);
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-            //mMap.setTrafficEnabled(true);
             location = locationManager.getLastKnownLocation(bestProvider);
             if (location != null) {
                 onLocationChanged(location);
-                mlatitude = location.getLatitude();
-                mlongitude = location.getLongitude();
+                mlatitude=location.getLatitude();
+                mlongitude=location.getLongitude();
 
                 SharedPreferences passwordPref = getSharedPreferences("VoyMate", MODE_PRIVATE);
                 //initializing editor
@@ -197,9 +197,9 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
                 editor.putString("Lng", String.valueOf(mlongitude));
                 editor.apply();
 
-                Address locationAddress = getAddress(mlatitude, mlongitude);
+                Address locationAddress=getAddress(sLatitude,sLongitude);
 
-                if (locationAddress != null) {
+                if(locationAddress!=null) {
                     address = locationAddress.getAddressLine(0);
                     address1 = locationAddress.getAddressLine(1);
                     city = locationAddress.getLocality();
@@ -207,6 +207,7 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
                     country = locationAddress.getCountryName();
                     postalCode = locationAddress.getPostalCode();
                     //float rating = locationAddress.getRating();
+
                 }
 
 
@@ -219,21 +220,21 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
             }
         }
 
-        View locationButton = ((View) findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
+        View locationButton = ((View)findViewById(Integer.parseInt("1")).getParent()).findViewById(Integer.parseInt("2"));
         RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams) locationButton.getLayoutParams();
         rlp.addRule(RelativeLayout.ALIGN_PARENT_TOP, 0);
         rlp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-        rlp.setMargins(0, 0, 30, 30);
+        rlp.setMargins(0,0,30,30);
 
-        LatLng origin = new LatLng(mlatitude, mlongitude);
+        LatLng origin = new LatLng(sLatitude, sLongitude);
 
         mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(mlatitude, mlongitude))
-                .title(address)
+                .position(new LatLng(sLatitude, sLongitude))
+                .title(cityName)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.mark_blue)));
 
 
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
         if (!isConnected) {
@@ -246,7 +247,7 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
             dialog.show();
         } else {
 
-            String url = getUrl(mlatitude, mlongitude, Key);
+            String url = getUrl(sLatitude, sLongitude, Key);
             Object[] DataTransfer = new Object[2];
             DataTransfer[0] = googleMap;
             DataTransfer[1] = url;
@@ -257,8 +258,8 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
         }
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, 10));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 10));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 10), 2000, null);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 10));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 10), 2000, null);
 
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
@@ -277,6 +278,7 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 mLocationPermissionGranted = true;
+                mMap.setMyLocationEnabled(true);
 
             } else {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
@@ -293,9 +295,6 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     mLocationPermissionGranted = true;
-                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                        mMap.setMyLocationEnabled(true);
-                    }
 
 
                 }
@@ -307,27 +306,7 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-    }
-
-    @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String s) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String s) {
+    public void onClick(View view) {
 
     }
 }

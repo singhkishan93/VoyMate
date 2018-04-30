@@ -65,7 +65,9 @@ public class PlaceListScreen extends Fragment {
                 public void onClick(View view) {
                     Bundle b = new Bundle();
                     b.putInt("ID",Id);
-                    Fragment placedetailsScreen = new PlaceDetailsScreen();
+                    b.putDouble("lat", 28.6562);
+                    b.putDouble("lng",77.2410);
+                    Fragment placedetailsScreen = new PlaceInfo();
                     placedetailsScreen.setArguments(b);
                     FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
@@ -83,7 +85,9 @@ public class PlaceListScreen extends Fragment {
                 public void onClick(View view) {
                     Bundle b = new Bundle();
                     b.putInt("ID",Id);
-                    Fragment placedetailsScreen = new PlaceDetailsScreen();
+                    b.putDouble("lat", 28.6127);
+                    b.putDouble("lng",77.2773);
+                    Fragment placedetailsScreen = new PlaceInfo();
                     placedetailsScreen.setArguments(b);
                     FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
@@ -101,7 +105,9 @@ public class PlaceListScreen extends Fragment {
                 public void onClick(View view) {
                     Bundle b = new Bundle();
                     b.putInt("ID",Id);
-                    Fragment placedetailsScreen = new PlaceDetailsScreen();
+                    b.putDouble("lat", 27.1750);
+                    b.putDouble("lng",78.0422);
+                    Fragment placedetailsScreen = new PlaceInfo();
                     placedetailsScreen.setArguments(b);
                     FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
@@ -120,7 +126,9 @@ public class PlaceListScreen extends Fragment {
                 public void onClick(View view) {
                     Bundle b = new Bundle();
                     b.putInt("ID",Id);
-                    Fragment placedetailsScreen = new PlaceDetailsScreen();
+                    b.putDouble("lat", 28.5732);
+                    b.putDouble("lng",77.2085);
+                    Fragment placedetailsScreen = new PlaceInfo();
                     placedetailsScreen.setArguments(b);
                     FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);

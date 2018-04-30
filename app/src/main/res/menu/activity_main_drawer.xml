@@ -5,16 +5,19 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/homeicon1"
-            app:itemBackground="@drawable/activated_item"
-            android:title="Home" />
+
         <item
             android:id="@+id/nav_explore"
             android:icon="@drawable/explore"
             app:itemBackground="@drawable/activated_item"
             android:title="Explore" />
+
+        <!--<item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/homeicon1"
+            app:itemBackground="@drawable/activated_item"
+            android:title="Home" />-->
+
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/navprofile"
