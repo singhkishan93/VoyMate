@@ -141,7 +141,7 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.redfort);
             PlaceName.setText("Red Fort");
-            AboutPlace.setText(R.string.english);
+            AboutPlace.setText(R.string.red_hint);
 
         }
         else if (Id==2){
@@ -149,21 +149,21 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.aksharsham);
             PlaceName.setText("Akshardham");
-            AboutPlace.setText(R.string.akenglish);
+            AboutPlace.setText(R.string.akshardham_hint);
         }
         else if (Id==3){
             String text = "<a href='https://en.wikipedia.org/wiki/taj_mahal'> Know More </a>";
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.taj);
             PlaceName.setText("Taj Mahal");
-            AboutPlace.setText(R.string.tajenglish);
+            AboutPlace.setText(R.string.taj_hint);
         }
         else if (Id==4){
             String text = "<a href='https://en.wikipedia.org/wiki/Dilli_Haat'> Know More </a>";
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.sarojni);
             PlaceName.setText("Dilli Haat");
-            AboutPlace.setText(R.string.dillihaatenglish);
+            AboutPlace.setText(R.string.dillihaat_hint);
         }
 
         setClickListeners();
@@ -230,12 +230,12 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
 
             case R.id.activities:
-                fireIntent(new Intent(getContext(), PlacesOnMap.class), "park");
+                fireIntent(new Intent(getContext(), PlacesOnMap.class), "hangout");
                 //getActivity().finish();
                 break;
 
             case R.id.hangout:
-                fireIntent(new Intent(getContext(), PlacesOnMap.class), "hangout");
+                fireIntent(new Intent(getContext(), PlacesOnMap.class), "Hotel");
                 //getActivity().finish();
                 break;
             case R.id.sight:
