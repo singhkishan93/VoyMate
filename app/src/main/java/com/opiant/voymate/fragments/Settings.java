@@ -42,6 +42,7 @@ public class Settings extends Fragment implements View.OnClickListener {
     private PendingIntent pendingIntent;
     String finalInfo;
     private static final int REQUEST_READ_PHONE_STATE =0 ;
+    File fileToSend;
 
     public Settings() {
         // Required empty public constructor
@@ -132,7 +133,7 @@ public class Settings extends Fragment implements View.OnClickListener {
         }
 
         finalInfo = info;
-        emailBody = "This is email to" + getString(R.string.app_name) +"\n"+finalInfo;
+        emailBody = "This is email to " +""+ getString(R.string.app_name) +"\n"+finalInfo;
 
         ReportProblem.setOnClickListener(this);
 
@@ -188,8 +189,10 @@ public class Settings extends Fragment implements View.OnClickListener {
         }
         File file = null;
         try{
-            file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), FILENAME);
 
+            Environment.getExternalStorageState();
+
+            file = new File(Environment.getExternalStorageDirectory(), FILENAME);
             writer = new FileWriter(file);
             writer.write(content);
             writer.close();
@@ -203,7 +206,7 @@ public class Settings extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        //File fileToSend = createFileWithContent(finalInfo);
+         //fileToSend = createFileWithContent(finalInfo);
 
         sendIntentToGmailApp();
     }

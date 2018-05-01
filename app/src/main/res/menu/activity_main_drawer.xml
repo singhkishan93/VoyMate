@@ -39,11 +39,10 @@
             android:icon="@drawable/ic_menu_manage"
             app:itemBackground="@drawable/activated_item"
             android:title="Tools" />
-
-        <!--<item
-            android:id="@+id/nav_help"
+        <item
+            android:id="@+id/help"
             android:icon="@drawable/ic_menu_help_support"
-            android:title="Help" />-->
+            android:title="Help" />
 
         <item
            android:id="@+id/nav_about"

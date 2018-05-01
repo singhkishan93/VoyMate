@@ -4,12 +4,15 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -28,11 +31,16 @@ import com.opiant.voymate.Constant;
 import com.opiant.voymate.R;
 import com.opiant.voymate.fragments.About;
 import com.opiant.voymate.fragments.ExploreScreen;
+import com.opiant.voymate.fragments.Help;
 import com.opiant.voymate.fragments.HomeScreen;
 import com.opiant.voymate.fragments.MyProfile;
 import com.opiant.voymate.fragments.NearBy;
 import com.opiant.voymate.fragments.Settings;
 import com.opiant.voymate.fragments.Tools;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static MainActivity instance;
     Toolbar toolbar;
     ImageView imageView;
-    TextView userName,userEmail;
-    String Email,Name,Image;
+    TextView userName,userEmail,placeName;
+    String Email,Name,Image,cityName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,12 +142,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
         Email= IdShared.getString("email", "");
         Name= IdShared.getString("myname", "");
+        String latitude = IdShared.getString("Lat","");
+        String longitude = IdShared.getString("Lng","");
+
+        Double lat = 28.4816551;
+        Double lng = 77.1872857;
+
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = geocoder.getFromLocation(lat, lng, 1);
+            cityName = addresses.get(0).getAddressLine(0);
+            Log.d("cityname",cityName);
+            String stateName = addresses.get(0).getAddressLine(1);
+            String countryName = addresses.get(0).getAddressLine(2);
+            String Name = addresses.get(0).getLocality();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         View headerview = navigationView.getHeaderView(0);
         userName = (TextView) headerview.findViewById(R.id.name);
         userEmail = (TextView) headerview.findViewById(R.id.email);
+        //placeName = (TextView) headerview.findViewById(R.id.location);
         imageView = (ImageView) headerview.findViewById(R.id.imageView);
         userEmail.setText(Email);
         userName.setText(Name);
+        //placeName.setText(cityName);
 
         Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
 
@@ -252,6 +281,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             aboutTransaction.replace(R.id.containerView1, about);
             aboutTransaction.addToBackStack(null);
             aboutTransaction.commit();
+
+        }
+       else if(id==R.id.help){
+            Fragment help = new Help();
+            FragmentTransaction searchTransaction = getSupportFragmentManager().beginTransaction();
+            searchTransaction.replace(R.id.containerView1, help);
+            searchTransaction.addToBackStack(null);
+            searchTransaction.commit();
 
         }
 

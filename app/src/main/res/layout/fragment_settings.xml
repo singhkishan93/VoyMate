@@ -38,7 +38,7 @@
         android:textStyle="bold"
         android:textSize="15dp"
         android:gravity="left|center"
-        android:drawableRight="@drawable/icon_forward"
+        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
         android:background="@color/white"
         tools:ignore="RtlCompat" />
 
@@ -77,6 +77,6 @@
         android:textSize="15dp"
         android:gravity="left|center"
         android:background="@color/white"
-        android:drawableRight="@drawable/icon_forward"
+        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
         tools:ignore="RtlCompat" />
 </RelativeLayout>

@@ -1,11 +1,16 @@
 package com.opiant.voymate.fragments;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.opiant.voymate.R;
 
@@ -15,6 +20,8 @@ public class Help extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+    Intent callIntent;
+    private static final int REQUEST_PHONE_CALL = 1;
     private OnFragmentInteractionListener mListener;
 
 
@@ -45,6 +52,30 @@ public class Help extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_help, container, false);
+        LinearLayout SOS = (LinearLayout)view.findViewById(R.id.sos);
+
+        SOS.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                    /*String messageToSend = "this is a message";
+                    String number = "9599367430";
+                    SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);*/
+
+                callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:9599367430"));
+
+                if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+                }
+                else
+                {
+                    startActivity(callIntent);
+                }
+            }
+        });
+
 
 
         return view;

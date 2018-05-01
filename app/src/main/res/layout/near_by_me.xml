@@ -12,126 +12,6 @@
         android:orientation="vertical"
         tools:context="tie.hackathon.travelguide.destinations.description.FinalCityInfo">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:contentDescription="@string/empty_description"
-            android:scaleType="centerCrop"
-            />
-
-
-        <TextView
-            android:id="@+id/head"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif-bold"
-            android:padding="10dp"
-            android:text="@string/sample_state"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@id/expandable_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textColor="#666666"
-                android:text="@string/akshardham_hint"
-                android:textSize="16sp" />
-
-
- <!--       <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shadow_1"
-            android:backgroundTint="#000000"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center_vertical"
-                    android:contentDescription="@string/empty_description"
-                    android:src="@drawable/ic_cloud_black_48dp" />
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="10dp"
-                    android:orientation="vertical"
-                    tools:ignore="RtlCompat">
-
-                    <TextView
-                        android:id="@+id/temp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="@string/max_text"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/humidit"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1.0"
-                            android:text="@string/min_text"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-
-                        <TextView
-                            android:id="@+id/weatherinfo"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_weight="1.0"
-                            android:text="@string/min_text"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
--->
-
-
-        <TextView
-            android:id="@+id/more"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="280dp"
-            android:text="" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +19,8 @@
 
 
             <LinearLayout
-                android:id="@+id/activities"
+
+                android:id="@+id/hotel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
@@ -153,15 +34,45 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/hangout" />
+                    android:src="@drawable/hotel" />
 
                 <TextView
-                    android:id="@+id/fftext"
+                    android:id="@+id/hoteltxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Hangout"
+                    android:text="Hotels"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/restaurant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@drawable/shadow_1"
+                android:backgroundTint="#000000"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/empty_description"
+                    android:src="@drawable/resta" />
+
+                <TextView
+                    android:id="@+id/rstatext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Restaurant"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -192,7 +103,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/hotel" />
+                    android:src="@drawable/atm" />
 
                 <TextView
                     android:id="@+id/hgtext"
@@ -200,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Hotels"
+                    android:text="Atm"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -222,7 +133,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/mapmarker" />
+                    android:src="@drawable/bank" />
 
                 <TextView
                     android:id="@+id/mntext"
@@ -230,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Sights"
+                    android:text="Banks"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -260,7 +171,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/shops" />
+                    android:src="@drawable/hospital" />
 
                 <TextView
                     android:id="@+id/shtext"
@@ -268,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Shopping"
+                    android:text="Hospitals"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -289,7 +200,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/resta" />
+                    android:src="@drawable/police" />
 
                 <TextView
                     android:id="@+id/rstext"
@@ -297,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Restaurants"
+                    android:text="Police Station"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -306,7 +217,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+<!--        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -326,7 +237,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/ic_headset_black_24dp" />
+                    android:src="@drawable/resta" />
 
                 <TextView
                     android:id="@+id/cttext"
@@ -334,12 +245,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Listen"
+                    android:text="Restaurant"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
             </LinearLayout>
-        </LinearLayout>
+        </LinearLayout>-->
 
     </LinearLayout>
 </ScrollView>

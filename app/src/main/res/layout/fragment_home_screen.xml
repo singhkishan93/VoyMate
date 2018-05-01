@@ -30,7 +30,7 @@
             android:hint="Search Place Near By Delhi"
             android:cursorVisible="false"
             android:editable="false"
-            android:drawableRight="@drawable/search"
+            android:drawableRight="@drawable/ic_search_black_24dp"
             android:layout_height="40dp"
             android:background="@color/white"
             android:gravity="center"

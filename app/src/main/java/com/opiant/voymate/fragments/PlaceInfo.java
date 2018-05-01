@@ -231,24 +231,20 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
 
             case R.id.activities:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "hangout");
-                //getActivity().finish();
                 break;
 
             case R.id.hangout:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "Hotel");
-                //getActivity().finish();
                 break;
             case R.id.sight:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "museum");
-                //getActivity().finish();
                 break;
             case R.id.shoppp:
-                fireIntent(new Intent(getContext(), PlacesOnMap.class), "shopping");
-                //getActivity().finish();
+                //fireIntent(new Intent(getContext(), PlacesOnMap.class), "shopping");
+                fireIntent(new Intent(getContext(), PlacesOnMap.class), "shopping_mall");
                 break;
             case R.id.restau:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "restaurant");
-                //getActivity().finish();
                 break;
         }
 
