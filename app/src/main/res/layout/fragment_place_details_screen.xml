@@ -92,7 +92,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="27dp"
-            android:src="@drawable/headphones"
+            android:src="@drawable/ic_headset_black_24dp"
             app:civ_border_color="@color/bg_screen1"
             tools:ignore="RtlCompat" />
 

@@ -109,7 +109,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
                     placeName, vicinity);*/
             //move map camera
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
 
             mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 @Override

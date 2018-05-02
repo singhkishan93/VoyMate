@@ -8,7 +8,7 @@
 
         <item
             android:id="@+id/nav_explore"
-            android:icon="@drawable/explore"
+            android:icon="@drawable/ic_explore_black_24dp"
             app:itemBackground="@drawable/activated_item"
             android:title="Explore" />
 
@@ -20,18 +20,18 @@
 
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/navprofile"
+            android:icon="@drawable/ic_person_black_24dp"
             app:itemBackground="@drawable/activated_item"
             android:title="My Profile" />
 
         <item
             android:id="@+id/nav_book"
-            android:icon="@drawable/booktour"
+            android:icon="@drawable/ic_flight_takeoff_black_24dp"
             app:itemBackground="@drawable/activated_item"
             android:title="Book Tour" />
         <item
             android:id="@+id/nav_nearby"
-            android:icon="@drawable/nearby"
+            android:icon="@drawable/ic_near_me_black_24dp"
             android:title="Near By" />
 
         <item
@@ -46,7 +46,7 @@
 
         <item
            android:id="@+id/nav_about"
-           android:icon="@drawable/ic_info_black_24dp"
+           android:icon="@drawable/ic_info_outline_black_24dp"
             app:itemBackground="@drawable/activated_item"
            android:title="About App" />
     </group>

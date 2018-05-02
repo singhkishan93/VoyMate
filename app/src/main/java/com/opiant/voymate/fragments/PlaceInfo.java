@@ -110,16 +110,9 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
                     }
                 });
 
-                popup.show();//showing popup menu
+                popup.show();
 
-               /* Bundle b = new Bundle();
-                b.putInt("ID",Id);
-                Fragment exploreScreen = new LanguageSelection();
-                exploreScreen.setArguments(b);
-                FragmentTransaction exploreScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
-                exploreScreenTransaction.addToBackStack(null);
-                exploreScreenTransaction.commit();*/
+
             }
         });
 
@@ -236,13 +229,16 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             case R.id.hangout:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "Hotel");
                 break;
+
             case R.id.sight:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "museum");
                 break;
+
             case R.id.shoppp:
                 //fireIntent(new Intent(getContext(), PlacesOnMap.class), "shopping");
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "shopping_mall");
                 break;
+
             case R.id.restau:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "restaurant");
                 break;

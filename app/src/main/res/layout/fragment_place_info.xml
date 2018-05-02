@@ -139,7 +139,7 @@
 
 
             <LinearLayout
-                android:id="@+id/activities"
+                android:id="@+id/listen"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
@@ -153,7 +153,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/hangout" />
+                    android:src="@drawable/ic_headset_black_24dp" />
 
                 <TextView
                     android:id="@+id/fftext"
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Hangout"
+                    android:text="Listen"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -312,7 +312,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/listen"
+                android:id="@+id/activities"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
@@ -326,7 +326,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/ic_headset_black_24dp" />
+                    android:src="@drawable/hangout" />
 
                 <TextView
                     android:id="@+id/cttext"
@@ -334,7 +334,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:text="Listen"
+                    android:text="Hangout"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

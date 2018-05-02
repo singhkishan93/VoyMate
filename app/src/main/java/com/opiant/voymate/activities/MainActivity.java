@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
@@ -59,42 +60,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        whiteNotificationBar(toolbar);
+
         Intent dataIntent = getIntent();
         Bundle bundle = dataIntent.getExtras();
         if (bundle!=null) {
             Email = bundle.getString("email");
             Name = bundle.getString("myname");
         }
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, Email, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });*/
-
-        /*Intent in = getIntent();
-        //Getting bundle
-        Bundle b2 = in.getExtras();
-        if (b2!=null) {
-            String Key = in.getStringExtra("Key");
-
-            if (Key.equals("atm")){
-                Bundle b1 = new Bundle();
-                b1.putString("Key",Key);
-                Fragment exploreScreen = new HomeScreen();
-                exploreScreen.setArguments(b1);
-                FragmentTransaction exploreScreenTransaction = getSupportFragmentManager().beginTransaction();
-                exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
-                exploreScreenTransaction.addToBackStack(null);
-                exploreScreenTransaction.commit();
-
-            }
-
-            Toast.makeText(getApplicationContext(), Key, Toast.LENGTH_LONG).show();
-        }*/
 
         // Get runtime permissions for Android M
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -153,10 +127,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         try {
             addresses = geocoder.getFromLocation(lat, lng, 1);
             cityName = addresses.get(0).getAddressLine(0);
-            Log.d("cityname",cityName);
+
             String stateName = addresses.get(0).getAddressLine(1);
             String countryName = addresses.get(0).getAddressLine(2);
             String Name = addresses.get(0).getLocality();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -226,12 +201,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        /*if (id == R.id.nav_home) {
-
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-
-        } else*/ if (id == R.id.nav_explore) {
+         if (id == R.id.nav_explore) {
 
             Fragment exploreScreen = new ExploreScreen();
             FragmentTransaction exploreScreenTransaction = getSupportFragmentManager().beginTransaction();
@@ -239,10 +209,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             exploreScreenTransaction.addToBackStack(null);
             exploreScreenTransaction.commit();
 
-        } else if (id == R.id.nav_book) {
-
-
-        } else if (id == R.id.nav_nearby) {
+        }
+        else if (id == R.id.nav_nearby) {
 
             Fragment nearby = new NearBy();
             FragmentTransaction nearbyTransaction = getSupportFragmentManager().beginTransaction();
@@ -251,7 +219,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             nearbyTransaction.commit();
 
 
-        } else if (id == R.id.nav_share) {
+        }
+        else if (id == R.id.nav_share) {
 
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.putExtra(Intent.EXTRA_TEXT, Constant.SHARE_CONTENT);
@@ -259,7 +228,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_with)));
             //startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
-        } else if (id == R.id.nav_tool) {
+        }
+        else if (id == R.id.nav_tool) {
 
             Fragment tools = new Tools();
             FragmentTransaction toolsTransaction = getSupportFragmentManager().beginTransaction();
@@ -306,5 +276,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void whiteNotificationBar(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int flags = view.getSystemUiVisibility();
+            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            view.setSystemUiVisibility(flags);
+            getWindow().setStatusBarColor(Color.parseColor("#3395ff"));
+        }
     }
 }

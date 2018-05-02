@@ -65,111 +65,9 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_explore_screen, container, false);
-        Monuments = (TextView)view.findViewById(R.id.magazines);
-        ReligiousPlace = (TextView)view.findViewById(R.id.textView2);
-        Mixed = (TextView)view.findViewById(R.id.textView3);
-        Market = (TextView)view.findViewById(R.id.textView4);
-        monuments1 = (ImageView) view.findViewById(R.id.imageView2);
-        monuments2 = (ImageView) view.findViewById(R.id.imageView3);
-        monuments3 = (ImageView) view.findViewById(R.id.imageView5);
-        religious1 = (ImageView) view.findViewById(R.id.imageView6);
-        religious2 = (ImageView) view.findViewById(R.id.imageView7);
-        religious3 = (ImageView) view.findViewById(R.id.imageView9);
-        mixed1 = (ImageView) view.findViewById(R.id.imageView10);
-        mixed2 = (ImageView) view.findViewById(R.id.imageView11);
-        mixed3 = (ImageView) view.findViewById(R.id.imageView13);
-        market1 = (ImageView) view.findViewById(R.id.imageView14);
-        market2 = (ImageView) view.findViewById(R.id.imageView15);
-        market3 = (ImageView) view.findViewById(R.id.imageView17);
 
-        monuments1.setOnClickListener(this);
-        monuments2.setOnClickListener(this);
-        monuments3.setOnClickListener(this);
-        religious1.setOnClickListener(this);
-        religious2.setOnClickListener(this);
-        religious3.setOnClickListener(this);
-        mixed1.setOnClickListener(this);
-        mixed2.setOnClickListener(this);
-        mixed3.setOnClickListener(this);
-        market1.setOnClickListener(this);
-        market2.setOnClickListener(this);
-        market3.setOnClickListener(this);
-
-        Monuments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Monuments.setTextColor(Color.MAGENTA);
-               /* Bundle b = new Bundle();
-                b.putInt("ID",1);
-                Fragment placedetailsScreen = new PlaceListScreen();
-                placedetailsScreen.setArguments(b);
-                FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-                placedetailsScreenTransaction.addToBackStack(null);
-                placedetailsScreenTransaction.commit();*/
-               //reMonuments();
-
-                id =1;
-                reToDetails(id);
-            }
-        });
-
-        ReligiousPlace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-               /* Bundle b = new Bundle();
-                b.putInt("ID",2);
-                Fragment placedetailsScreen = new PlaceListScreen();
-                placedetailsScreen.setArguments(b);
-                FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-                placedetailsScreenTransaction.addToBackStack(null);
-                placedetailsScreenTransaction.commit();*/
-
-               //reReligious();
-
-                id =2;
-                reToDetails(id);
-
-            }
-        });
-
-        Mixed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               /* Bundle b = new Bundle();
-                b.putInt("ID",3);
-                Fragment placedetailsScreen = new PlaceListScreen();
-                placedetailsScreen.setArguments(b);
-                FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-                placedetailsScreenTransaction.addToBackStack(null);
-                placedetailsScreenTransaction.commit();*/
-
-               //reMixed();
-                id =3;
-                reToDetails(id);
-            }
-        });
-
-        Market.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               /* Bundle b = new Bundle();
-                b.putInt("ID",4);
-                Fragment placedetailsScreen = new PlaceListScreen();
-                placedetailsScreen.setArguments(b);
-                FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-                placedetailsScreenTransaction.addToBackStack(null);
-                placedetailsScreenTransaction.commit();*/
-
-               //reMarket();
-                id =4;
-                reToDetails(id);
-            }
-        });
+        initViews();
+        onClickListener();
 
         //Recyclerview
         /*recyclerView = (RecyclerView) view.findViewById(R.id.hrlist_recycler_view);
@@ -207,6 +105,46 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         recyclerView4.setAdapter(mAdapter);*/
 
         return view;
+    }
+
+    public void initViews(){
+
+        Monuments = (TextView)view.findViewById(R.id.magazines);
+        ReligiousPlace = (TextView)view.findViewById(R.id.textView2);
+        Mixed = (TextView)view.findViewById(R.id.textView3);
+        Market = (TextView)view.findViewById(R.id.textView4);
+        monuments1 = (ImageView) view.findViewById(R.id.imageView2);
+        monuments2 = (ImageView) view.findViewById(R.id.imageView3);
+        monuments3 = (ImageView) view.findViewById(R.id.imageView5);
+        religious1 = (ImageView) view.findViewById(R.id.imageView6);
+        religious2 = (ImageView) view.findViewById(R.id.imageView7);
+        religious3 = (ImageView) view.findViewById(R.id.imageView9);
+        mixed1 = (ImageView) view.findViewById(R.id.imageView10);
+        mixed2 = (ImageView) view.findViewById(R.id.imageView11);
+        mixed3 = (ImageView) view.findViewById(R.id.imageView13);
+        market1 = (ImageView) view.findViewById(R.id.imageView14);
+        market2 = (ImageView) view.findViewById(R.id.imageView15);
+        market3 = (ImageView) view.findViewById(R.id.imageView17);
+    }
+
+    public void onClickListener(){
+
+        Monuments.setOnClickListener(this);
+        ReligiousPlace.setOnClickListener(this);
+        Mixed.setOnClickListener(this);
+        Market.setOnClickListener(this);
+        monuments1.setOnClickListener(this);
+        monuments2.setOnClickListener(this);
+        monuments3.setOnClickListener(this);
+        religious1.setOnClickListener(this);
+        religious2.setOnClickListener(this);
+        religious3.setOnClickListener(this);
+        mixed1.setOnClickListener(this);
+        mixed2.setOnClickListener(this);
+        mixed3.setOnClickListener(this);
+        market1.setOnClickListener(this);
+        market2.setOnClickListener(this);
+        market3.setOnClickListener(this);
     }
 
 
@@ -321,6 +259,10 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId())
         {
+            case R.id.magazines:
+                id=1;
+                reToDetails(id);
+                break;
             case R.id.imageView2:
                 id=1;
                 reToDetails(id);
@@ -331,6 +273,10 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imageView5:
                 id=1;
+                reToDetails(id);
+                break;
+            case R.id.textView2:
+                id=2;
                 reToDetails(id);
                 break;
             case R.id.imageView6:
@@ -345,6 +291,10 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 id=2;
                 reToDetails(id);
                 break;
+            case R.id.textView3:
+                id=3;
+                reToDetails(id);
+                break;
             case R.id.imageView10:
                 id=3;
                 reToDetails(id);
@@ -355,6 +305,10 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 break;
             case R.id.imageView13:
                 id=3;
+                reToDetails(id);
+                break;
+            case R.id.textView4:
+                id=4;
                 reToDetails(id);
                 break;
             case R.id.imageView14:
