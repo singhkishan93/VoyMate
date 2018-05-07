@@ -1,13 +1,8 @@
-package com.opiant.voymate;
+package com.opiant.voymate.nearbyapi;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,16 +10,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.opiant.voymate.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by navneet on 23/7/16.
@@ -109,7 +102,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
                     placeName, vicinity);*/
             //move map camera
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
 
             mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
                 @Override

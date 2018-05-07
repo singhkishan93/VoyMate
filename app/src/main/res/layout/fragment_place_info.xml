@@ -192,7 +192,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/hotel" />
+                    android:src="@drawable/ic_local_hotel_black_24dp" />
 
                 <TextView
                     android:id="@+id/hgtext"
@@ -222,7 +222,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/mapmarker" />
+                    android:src="@drawable/ic_sight_black_24dp" />
 
                 <TextView
                     android:id="@+id/mntext"
@@ -260,7 +260,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/shops" />
+                    android:src="@drawable/ic_shopping_cart_black_24dp" />
 
                 <TextView
                     android:id="@+id/shtext"
@@ -289,7 +289,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/resta" />
+                    android:src="@drawable/ic_restaurant_black_24dp" />
 
                 <TextView
                     android:id="@+id/rstext"

@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -29,27 +30,18 @@ import static android.support.v4.content.ContextCompat.checkSelfPermission;
 
 
 
-public class NearBy extends Fragment{
+public class NearBy extends Fragment implements View.OnClickListener{
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     View view;
     private String mParam1;
     private String mParam2;
-    private GoogleApiClient mGoogleApiClient;
     private OnFragmentInteractionListener mListener;
-    private boolean mLocationPermissionGranted;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    private int PLACE_PICKER_REQUEST = 1;
-    double mlatitude = 0.0, mlongitude = 0.0, sLatitude=0.0,sLongitude=0.0;
-    private GoogleMap mMap;
-    SupportMapFragment mapFragment;
-    Location location;
-    private int PROXIMITY_RADIUS = 1000;
-    private final static int MY_PERMISSION_FINELOCATION = 101;
-    String cityname, address, address1, city, country, postalCode, state,HelpKey;
-    private AnimationDrawable animationDrawable;
-    private RelativeLayout constraintLayout;
+    LinearLayout Atm,Bank,Hospital,PoliceStation,Hotels,Restaurent;
+    Bundle b = new Bundle();
+    private String Values;
+    Intent intent;
 
     public NearBy() {
         // Required empty public constructor
@@ -74,75 +66,43 @@ public class NearBy extends Fragment{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-           view = inflater.inflate(R.layout.fragment_near_by, container, false);
-
-        /*constraintLayout = (RelativeLayout) view.findViewById(R.id.rl);
-        // initializing animation drawable by getting background from constraint layout
-        animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-
-        // setting enter fade animation duration to 5 seconds
-        animationDrawable.setEnterFadeDuration(5000);
-
-        // setting exit fade animation duration to 2 seconds
-        animationDrawable.setExitFadeDuration(2000);*/
-
-        CircleImageView Atm = (CircleImageView)view.findViewById(R.id.atm);
-        CircleImageView Bank = (CircleImageView)view.findViewById(R.id.banks);
-        CircleImageView Hospital = (CircleImageView)view.findViewById(R.id.hospitals);
-        CircleImageView PoliceStation = (CircleImageView)view.findViewById(R.id.police);
-
-        Atm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle b = new Bundle();
-                b.putString("Key", "atm");
-                Intent intent = new Intent(getContext(),NearByPlace.class);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
-
-        Bank.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle b = new Bundle();
-                b.putString("Key", "bank");
-                Intent intent = new Intent(getContext(),NearByPlace.class);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
-
-        Hospital.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle b = new Bundle();
-                b.putString("Key", "hospital");
-                Intent intent = new Intent(getContext(),NearByPlace.class);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
-
-        PoliceStation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle b = new Bundle();
-                b.putString("Key", "police");
-                Intent intent = new Intent(getContext(),NearByPlace.class);
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        });
-
+           view = inflater.inflate(R.layout.near_by_me, container, false);
+           initViews();
 
 
         return view;
     }
+
+
+    public void initViews(){
+
+        Atm = view.findViewById(R.id.atm);
+        Bank = view.findViewById(R.id.banks);
+        Hospital = view.findViewById(R.id.hospitals);
+        PoliceStation = view.findViewById(R.id.police);
+        Hotels = view.findViewById(R.id.hotel);
+        Restaurent = view.findViewById(R.id.restaurant);
+
+        Atm.setOnClickListener(this);
+        Bank.setOnClickListener(this);
+        Hospital.setOnClickListener(this);
+        PoliceStation.setOnClickListener(this);
+        Hotels.setOnClickListener(this);
+        Restaurent.setOnClickListener(this);
+    }
+
+    public  void reToMap(String values){
+
+        Bundle b = new Bundle();
+        b.putString("Key",Values);
+        intent = new Intent(getContext(),NearByPlace.class);
+        intent.putExtras(b);
+        startActivity(intent);
+
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -172,50 +132,41 @@ public class NearBy extends Fragment{
     @Override
     public void onResume() {
         super.onResume();
-      /*MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.fr_map);
-        mapFragment.getMapAsync(this);
 
-        if (mMap!=null){
-            onMapReady(mMap);
-        }*/
-
-       /* if (animationDrawable != null && !animationDrawable.isRunning()) {
-            // start the animation
-            animationDrawable.start();
-        }*/
     }
-
-
-
-    private boolean checkPermission() {
-        return ( ContextCompat.checkSelfPermission(getContext(), SEND_SMS ) == PackageManager.PERMISSION_GRANTED);
-    }
-
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSION_FINELOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    mLocationPermissionGranted = true;
+    public void onClick(View view) {
 
-                    if (checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-
-                        mMap.setMyLocationEnabled(true);
-                        //mMap.setTrafficEnabled(true);
-
-                    }
-                    else {
-                        Toast.makeText(getActivity(), "permission denied", Toast.LENGTH_LONG).show();
-                        getActivity().finish();
-                    }
-                }
-
+        switch (view.getId())
+        {
+            case R.id.atm:
+                 Values = "atm";
+                 reToMap(Values);
                 break;
-            }
+            case R.id.banks:
+                Values = "bank";
+                reToMap(Values);
+                break;
+            case R.id.hospitals:
+                Values = "hospital";
+                reToMap(Values);
+                break;
+            case R.id.police:
+                Values = "police";
+                reToMap(Values);
+                break;
+            case R.id.hotel:
+                Values = "hotel";
+                reToMap(Values);
+                break;
+            case R.id.restaurant:
+                Values = "restaurant";
+                reToMap(Values);
+                break;
+
         }
+
     }
 
 

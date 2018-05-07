@@ -7,19 +7,24 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.opiant.voymate.R;
 
 
-public class PlaceListScreen extends Fragment {
+public class PlaceListScreen extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
     TextView placeName,placeType;
+    LinearLayout linearLayout;
+    double lat,lng;
     View view;
+    int Id;
 
 
     public PlaceListScreen() {
@@ -49,21 +54,33 @@ public class PlaceListScreen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        view = inflater.inflate(R.layout.fragment_place_list_screen, container, false);
-       placeName = (TextView)view.findViewById(R.id.textViewName);
-       placeType = (TextView)view.findViewById(R.id.textViewSubtitle);
+       initViews();
+       /* Bundle bundle = getArguments();
+        Id = bundle.getInt("ID");*/
+        return view ;
+    }
+
+    public void initViews(){
+        placeName = view.findViewById(R.id.textViewName);
+        placeType = view.findViewById(R.id.textViewSubtitle);
+        linearLayout = view.findViewById(R.id.ll);
+
+
 
         Bundle bundle = getArguments();
-        final int Id = bundle.getInt("ID");
+        Id = bundle.getInt("ID");
 
         if (Id==1){
 
             placeName.setText("Red Fort");
             placeType.setText("Monuments");
-
-            placeName.setOnClickListener(new View.OnClickListener() {
+          /*  lat=28.6562;
+            lng=77.2410;
+            linearLayout.setOnClickListener(this);*/
+            linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Bundle b = new Bundle();
+                   Bundle b = new Bundle();
                     b.putInt("ID",Id);
                     b.putDouble("lat", 28.6562);
                     b.putDouble("lng",77.2410);
@@ -80,7 +97,7 @@ public class PlaceListScreen extends Fragment {
 
             placeName.setText("Akshardham");
             placeType.setText("Religious Place");
-            placeName.setOnClickListener(new View.OnClickListener() {
+            linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle b = new Bundle();
@@ -100,7 +117,7 @@ public class PlaceListScreen extends Fragment {
         else if (Id==3){
             placeName.setText("Taj Mahal");
             placeType.setText("Tourist Place");
-            placeName.setOnClickListener(new View.OnClickListener() {
+            linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle b = new Bundle();
@@ -121,7 +138,7 @@ public class PlaceListScreen extends Fragment {
         else if (Id==4){
             placeName.setText("Dilli Haat");
             placeType.setText("Market & Shopping");
-            placeName.setOnClickListener(new View.OnClickListener() {
+            linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle b = new Bundle();
@@ -139,7 +156,21 @@ public class PlaceListScreen extends Fragment {
 
         }
 
-        return view ;
+
+    }
+
+    public void retoPlaceInfo(int id,double lat,double lng){
+        Bundle b = new Bundle();
+        b.putInt("ID",id);
+        b.putDouble("lat", lat);
+        b.putDouble("lng",lng);
+        Fragment placedetailsScreen = new PlaceInfo();
+        placedetailsScreen.setArguments(b);
+        FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
+        placedetailsScreenTransaction.addToBackStack(null);
+        placedetailsScreenTransaction.commit();
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -164,6 +195,19 @@ public class PlaceListScreen extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.ll:
+                    retoPlaceInfo(Id,lat,lng);
+
+                break;
+        }
+
     }
 
     public interface OnFragmentInteractionListener {

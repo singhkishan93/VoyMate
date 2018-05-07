@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.currencyapi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -11,6 +11,8 @@ public class MainPresenter implements MainContract.Presenter {
     private MainContract.View mView;
 
     private FixerService mService;
+
+    private String API_KEY = "584734a977cba68eed27cc03275d34cc";
 
     public MainPresenter() {
         Retrofit retrofit = new Retrofit.Builder()

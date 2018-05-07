@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.currencyapi;
 
 import java.util.Map;
 

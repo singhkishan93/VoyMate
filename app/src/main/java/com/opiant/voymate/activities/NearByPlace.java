@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
@@ -39,7 +42,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.opiant.voymate.GetNearbyPlacesData;
+import com.opiant.voymate.nearbyapi.GetNearbyPlacesData;
 import com.opiant.voymate.R;
 
 import java.io.IOException;
@@ -47,8 +50,6 @@ import java.util.List;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static android.support.v4.content.ContextCompat.checkSelfPermission;
 
 public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener, LocationListener {
     private int PROXIMITY_RADIUS = 1000;
@@ -227,6 +228,15 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
 
         LatLng origin = new LatLng(mlatitude, mlongitude);
 
+       /* Drawable background = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_place_darkred_24dp);
+        background.setBounds(0, 0, background.getIntrinsicWidth(), background.getIntrinsicHeight());
+        Drawable vectorDrawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_place_darkred_24dp);
+        vectorDrawable.setBounds(40, 20, vectorDrawable.getIntrinsicWidth() + 40, vectorDrawable.getIntrinsicHeight() + 20);
+        bitmap = Bitmap.createBitmap(background.getIntrinsicWidth(), background.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        background.draw(canvas);
+        vectorDrawable.draw(canvas);*/
+
         mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(mlatitude, mlongitude))
                 .title(address)
@@ -256,9 +266,9 @@ public class NearByPlace extends AppCompatActivity implements OnMapReadyCallback
 
         }
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, 10));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 10));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 10), 2000, null);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, 12));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 12));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(mlatitude, mlongitude), 12), 2000, null);
 
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override

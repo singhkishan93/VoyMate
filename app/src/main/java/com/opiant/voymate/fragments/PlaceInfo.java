@@ -39,6 +39,7 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     double latitude = 0.0, longitude =0.0;
     LinearLayout Activities,Sights,Hangout,Restaurant,Shopping,Listen;
     private OnFragmentInteractionListener mListener;
+    View view;
 
     public PlaceInfo() {
         // Required empty public constructor
@@ -65,56 +66,31 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_place_info, container, false);
-        PlaceImage = (ImageView) view.findViewById(R.id.image);
-        PlaceName = (TextView) view.findViewById(R.id.head);
-        AboutPlace = (TextView)view.findViewById(R.id.expandable_text);
-        KnowMore = (TextView)view.findViewById(R.id.more);
-        Activities = (LinearLayout)view.findViewById(R.id.activities);
-        Hangout = (LinearLayout)view.findViewById(R.id.hangout);
-        Sights = (LinearLayout)view.findViewById(R.id.sight);
-        Restaurant = (LinearLayout)view.findViewById(R.id.restau);
-        Shopping = (LinearLayout)view.findViewById(R.id.shoppp);
-        Listen = (LinearLayout)view.findViewById(R.id.listen);
+        view = inflater.inflate(R.layout.fragment_place_info, container, false);
 
-        Listen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        initViews();
+        return view;
+    }
 
-                //Creating the instance of PopupMenu
-                PopupMenu popup = new PopupMenu(getActivity(), Listen);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
+    public void initViews(){
 
-                        String language = String.valueOf(item.getTitle());
+        PlaceImage = view.findViewById(R.id.image);
+        PlaceName = view.findViewById(R.id.head);
+        AboutPlace = view.findViewById(R.id.expandable_text);
+        KnowMore = view.findViewById(R.id.more);
+        Activities = view.findViewById(R.id.activities);
+        Hangout = view.findViewById(R.id.hangout);
+        Sights = view.findViewById(R.id.sight);
+        Restaurant = view.findViewById(R.id.restau);
+        Shopping = view.findViewById(R.id.shoppp);
+        Listen = view.findViewById(R.id.listen);
 
-                        if (language.equals("Hindi")){
-
-                            setLocale("hi");
-                        }
-                        else if (language.equals("English")){
-
-                            setLocale("en");
-                        }
-                        else if (language.equals("Français")){
-
-                            setLocale("fr");
-                        }
-                        else if (language.equals("Español")){
-
-                            setLocale("ES");
-                        }
-
-                        return true;
-                    }
-                });
-
-                popup.show();
-
-
-            }
-        });
+        Activities.setOnClickListener(this);
+        Hangout.setOnClickListener(this);
+        Sights.setOnClickListener(this);
+        Shopping.setOnClickListener(this);
+        Restaurant.setOnClickListener(this);
+        Listen.setOnClickListener(this);
 
         KnowMore.setClickable(true);
         KnowMore.setMovementMethod(LinkMovementMethod.getInstance());
@@ -123,13 +99,15 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
         latitude = bundle.getDouble("lat");
         longitude = bundle.getDouble("lng");
 
-        String mainURl = "https://en.wikipedia.org/wiki/";
-        String placeName ="red_fort";
-        String a = "<a href='";
-        String b = "'> Know More </a>";
-        String finalURl = mainURl+placeName;
+
 
         if (Id==1){
+
+            String mainURl = "https://en.wikipedia.org/wiki/";
+            String placeName ="red_fort";
+            String a = "<a href='";
+            String b = "'> Know More </a>";
+            String finalURl = mainURl+placeName;
             String text = a+finalURl+b;
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.redfort);
@@ -138,6 +116,8 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
 
         }
         else if (Id==2){
+
+
             String text = "<a href='https://en.wikipedia.org/wiki/Akshardham_(Delhi)'> Know More </a>";
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.aksharsham);
@@ -158,18 +138,39 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             PlaceName.setText("Dilli Haat");
             AboutPlace.setText(R.string.dillihaat_hint);
         }
-
-        setClickListeners();
-        return view;
     }
 
-    private void setClickListeners() {
-        Activities.setOnClickListener(this);
-        Hangout.setOnClickListener(this);
-        Sights.setOnClickListener(this);
-        Shopping.setOnClickListener(this);
-        Restaurant.setOnClickListener(this);
+    public void showPopUp(){
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(getActivity(), Listen);
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
 
+                String language = String.valueOf(item.getTitle());
+
+                if (language.equals("Hindi")){
+
+                    setLocale("hi");
+                }
+                else if (language.equals("English")){
+
+                    setLocale("en");
+                }
+                else if (language.equals("Français")){
+
+                    setLocale("fr");
+                }
+                else if (language.equals("Español")){
+
+                    setLocale("ES");
+                }
+
+                return true;
+            }
+        });
+
+        popup.show();
     }
 
 
@@ -221,6 +222,9 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
         switch (view.getId()) {
+
+            case R.id.listen:
+                showPopUp();
 
             case R.id.activities:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "hangout");

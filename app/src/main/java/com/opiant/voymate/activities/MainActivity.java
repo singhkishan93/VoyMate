@@ -62,13 +62,71 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         whiteNotificationBar(toolbar);
+        runPermission();
+        initViews();
 
+    }
+
+    public void initViews(){
         Intent dataIntent = getIntent();
         Bundle bundle = dataIntent.getExtras();
         if (bundle!=null) {
             Email = bundle.getString("email");
             Name = bundle.getString("myname");
         }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        frameLayout = (FrameLayout) findViewById(R.id.containerView1);
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+        mFragmentTransaction.replace(R.id.containerView1, new ExploreScreen());
+        mFragmentTransaction.addToBackStack(null);
+        mFragmentTransaction.commit();
+
+
+        // Calling HeaderView Item and Making Click Listener on That
+        SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
+        Email= IdShared.getString("email", "");
+        Name= IdShared.getString("myname", "");
+        /*String latitude = IdShared.getString("Lat","");
+        String longitude = IdShared.getString("Lng","");
+        Double lat = 28.4816551;
+        Double lng = 77.1872857;
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        List<Address> addresses = null;
+        try {
+            addresses = geocoder.getFromLocation(lat, lng, 1);
+            cityName = addresses.get(0).getAddressLine(0);
+
+            String stateName = addresses.get(0).getAddressLine(1);
+            String countryName = addresses.get(0).getAddressLine(2);
+            String Name = addresses.get(0).getLocality();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        View headerview = navigationView.getHeaderView(0);
+        userName = headerview.findViewById(R.id.name);
+        userEmail = headerview.findViewById(R.id.email);
+        imageView = headerview.findViewById(R.id.imageView);
+        userEmail.setText(Email);
+        userName.setText(Name);
+        //placeName = (TextView) headerview.findViewById(R.id.location);
+        //placeName.setText(cityName);
+
+        Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
+
+    }
+
+    public void runPermission(){
 
         // Get runtime permissions for Android M
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -93,59 +151,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }, 0);
             }
         }
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        frameLayout = (FrameLayout) findViewById(R.id.containerView1);
-        mFragmentManager = getSupportFragmentManager();
-        mFragmentTransaction = getSupportFragmentManager().beginTransaction();
-        mFragmentTransaction.replace(R.id.containerView1, new ExploreScreen());
-        mFragmentTransaction.addToBackStack(null);
-        mFragmentTransaction.commit();
-
-
-        // Calling HeaderView Item and Making Click Listener on That
-        SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
-        Email= IdShared.getString("email", "");
-        Name= IdShared.getString("myname", "");
-        String latitude = IdShared.getString("Lat","");
-        String longitude = IdShared.getString("Lng","");
-
-        Double lat = 28.4816551;
-        Double lng = 77.1872857;
-
-        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-        List<Address> addresses = null;
-        try {
-            addresses = geocoder.getFromLocation(lat, lng, 1);
-            cityName = addresses.get(0).getAddressLine(0);
-
-            String stateName = addresses.get(0).getAddressLine(1);
-            String countryName = addresses.get(0).getAddressLine(2);
-            String Name = addresses.get(0).getLocality();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        View headerview = navigationView.getHeaderView(0);
-        userName = (TextView) headerview.findViewById(R.id.name);
-        userEmail = (TextView) headerview.findViewById(R.id.email);
-        //placeName = (TextView) headerview.findViewById(R.id.location);
-        imageView = (ImageView) headerview.findViewById(R.id.imageView);
-        userEmail.setText(Email);
-        userName.setText(Name);
-        //placeName.setText(cityName);
-
-        Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
 
     }
 
@@ -283,7 +288,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             int flags = view.getSystemUiVisibility();
             flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
             view.setSystemUiVisibility(flags);
-            getWindow().setStatusBarColor(Color.parseColor("#3395ff"));
+            getWindow().setStatusBarColor(Color.parseColor("#11A2fb"));
         }
     }
 }

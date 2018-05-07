@@ -34,7 +34,6 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
     private List<RecyclerViewClass> mItems;
     TextView Monuments,ReligiousPlace,Mixed,Market;
     ImageView monuments1,monuments2,monuments3,religious1,religious2,religious3,mixed1,mixed2,mixed3,market1,market2,market3;
-    private int[] MonumentsImage = {R.drawable.delhi,R.drawable.igate,R.drawable.aksharsham};
     View view;
     private OnFragmentInteractionListener mListener;
     int id;
@@ -67,7 +66,6 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_explore_screen, container, false);
 
         initViews();
-        onClickListener();
 
         //Recyclerview
         /*recyclerView = (RecyclerView) view.findViewById(R.id.hrlist_recycler_view);
@@ -125,9 +123,6 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         market1 = (ImageView) view.findViewById(R.id.imageView14);
         market2 = (ImageView) view.findViewById(R.id.imageView15);
         market3 = (ImageView) view.findViewById(R.id.imageView17);
-    }
-
-    public void onClickListener(){
 
         Monuments.setOnClickListener(this);
         ReligiousPlace.setOnClickListener(this);
@@ -206,54 +201,6 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         placedetailsScreenTransaction.addToBackStack(null);
         placedetailsScreenTransaction.commit();
     }
-
-    /*public void reMonuments(){
-
-        Bundle b = new Bundle();
-        b.putInt("ID",1);
-        Fragment placedetailsScreen = new PlaceListScreen();
-        placedetailsScreen.setArguments(b);
-        FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-        placedetailsScreenTransaction.addToBackStack(null);
-        placedetailsScreenTransaction.commit();
-    }
-
-    public void reReligious(){
-
-        Bundle b = new Bundle();
-        b.putInt("ID",2);
-        Fragment placedetailsScreen = new PlaceListScreen();
-        placedetailsScreen.setArguments(b);
-        FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-        placedetailsScreenTransaction.addToBackStack(null);
-        placedetailsScreenTransaction.commit();
-    }
-
-    public void reMixed(){
-
-        Bundle b = new Bundle();
-        b.putInt("ID",3);
-        Fragment placedetailsScreen = new PlaceListScreen();
-        placedetailsScreen.setArguments(b);
-        FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-        placedetailsScreenTransaction.addToBackStack(null);
-        placedetailsScreenTransaction.commit();
-    }
-
-    public void reMarket(){
-
-        Bundle b = new Bundle();
-        b.putInt("ID",4);
-        Fragment placedetailsScreen = new PlaceListScreen();
-        placedetailsScreen.setArguments(b);
-        FragmentTransaction placedetailsScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        placedetailsScreenTransaction.replace(R.id.containerView1, placedetailsScreen);
-        placedetailsScreenTransaction.addToBackStack(null);
-        placedetailsScreenTransaction.commit();
-    }*/
 
     @Override
     public void onClick(View view) {

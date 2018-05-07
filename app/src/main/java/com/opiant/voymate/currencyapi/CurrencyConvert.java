@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.currencyapi;
 
 import android.support.v4.app.Fragment;
 import android.os.Build;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
+import com.opiant.voymate.R;
 import com.opiant.voymate.adapters.BaseCurrencyAdapter;
 import com.opiant.voymate.adapters.CurrencyAdapter;
 

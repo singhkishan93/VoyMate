@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import com.opiant.voymate.R;
 
 
-public class Help extends Fragment {
+public class Help extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
@@ -23,7 +23,7 @@ public class Help extends Fragment {
     Intent callIntent;
     private static final int REQUEST_PHONE_CALL = 1;
     private OnFragmentInteractionListener mListener;
-
+    View view;
 
     public Help() {
         // Required empty public constructor
@@ -49,36 +49,36 @@ public class Help extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_help, container, false);
-        LinearLayout SOS = (LinearLayout)view.findViewById(R.id.sos);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_help, container, false);
+        initViews();
+        return view;
+    }
 
-        SOS.setOnClickListener(new View.OnClickListener() {
+    public void initViews(){
+        LinearLayout SOS = view.findViewById(R.id.sos);
 
-            @Override
-            public void onClick(View view) {
+        SOS.setOnClickListener(this);
 
-                    /*String messageToSend = "this is a message";
+    }
+
+    public void callIntent(){
+
+          /*String messageToSend = "this is a message";
                     String number = "9599367430";
                     SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null,null);*/
 
-                callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:9599367430"));
-
-                if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
-                }
-                else
-                {
-                    startActivity(callIntent);
-                }
-            }
-        });
+        callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:9599367430"));
+        if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+        }
+        else
+        {
+            startActivity(callIntent);
+        }
 
 
-
-        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -103,6 +103,18 @@ public class Help extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.sos:
+                callIntent();
+                break;
+        }
+
     }
 
 

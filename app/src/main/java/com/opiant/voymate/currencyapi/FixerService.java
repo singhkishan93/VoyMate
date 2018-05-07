@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.currencyapi;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

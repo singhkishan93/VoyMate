@@ -9,20 +9,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
+import android.widget.Switch;
 import android.widget.Toast;
 
-import com.opiant.voymate.CurrencyConvert;
+import com.opiant.voymate.currencyapi.CurrencyConvert;
 import com.opiant.voymate.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class Tools extends Fragment {
+public class Tools extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+    View view;
     CircleImageView Listen, ConvertCurrency;
     private OnFragmentInteractionListener mListener;
 
@@ -50,61 +52,64 @@ public class Tools extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-         View view = inflater.inflate(R.layout.fragment_tools, container, false);
-         ConvertCurrency = (CircleImageView)view.findViewById(R.id.currency);
-         Listen = (CircleImageView)view.findViewById(R.id.listen);
+         view = inflater.inflate(R.layout.fragment_tools, container, false);
+         initViews();
 
-         ConvertCurrency.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Fragment exploreScreen = new CurrencyConvert();
-                 FragmentTransaction exploreScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                 exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
-                 exploreScreenTransaction.addToBackStack(null);
-                 exploreScreenTransaction.commit();
-             }
-         });
+        return view;
+    }
 
-        Listen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Creating the instance of PopupMenu
-                PopupMenu popup = new PopupMenu(getActivity(), Listen);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
+    public void initViews(){
 
-                        String language = String.valueOf(item.getTitle());
+        ConvertCurrency = view.findViewById(R.id.currency);
+        Listen = view.findViewById(R.id.listen);
 
-                        if (language.equals("Hindi")){
+        ConvertCurrency.setOnClickListener(this);
+        Listen.setOnClickListener(this);
+    }
 
-                            Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+    public void retoCurrency(){
 
-                        }
-                        else if (language.equals("English")){
-                            Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+        Fragment exploreScreen = new CurrencyConvert();
+        FragmentTransaction exploreScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
+        exploreScreenTransaction.addToBackStack(null);
+        exploreScreenTransaction.commit();
+    }
 
-                        }
-                        else if (language.equals("Français")){
-                            Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+    public void openPopUp(){
 
-                        }
-                        else if (language.equals("Español")){
-                            Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(getActivity(), Listen);
+        popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
 
-                        }
+                String language = String.valueOf(item.getTitle());
 
-                        return true;
-                    }
-                });
+                if (language.equals("Hindi")){
 
-                popup.show();//showing popup menu
+                    Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+
+                }
+                else if (language.equals("English")){
+                    Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+
+                }
+                else if (language.equals("Français")){
+                    Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+
+                }
+                else if (language.equals("Español")){
+                    Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+
+                }
+
+                return true;
             }
         });
 
+        popup.show();//showing popup menu
 
-        return view;
     }
 
     public void onButtonPressed(Uri uri) {
@@ -128,6 +133,20 @@ public class Tools extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+
+            case R.id.currency:
+                retoCurrency();
+                break;
+
+            case R.id.listen:
+                openPopUp();
+                break;
+        }
     }
 
     public interface OnFragmentInteractionListener {

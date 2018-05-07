@@ -7,8 +7,8 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.opiant.voymate.ConvertContract;
-import com.opiant.voymate.ConvertPresenter;
+import com.opiant.voymate.currencyapi.ConvertContract;
+import com.opiant.voymate.currencyapi.ConvertPresenter;
 import com.opiant.voymate.R;
 
 public class ConvertActivity extends AppCompatActivity implements ConvertContract.View {

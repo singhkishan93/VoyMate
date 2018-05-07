@@ -50,7 +50,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.opiant.voymate.GetNearbyPlacesData;
+import com.opiant.voymate.nearbyapi.GetNearbyPlacesData;
 import com.opiant.voymate.activities.MainActivity;
 import com.opiant.voymate.R;
 
@@ -148,15 +148,7 @@ public class HomeScreen extends Fragment implements GoogleApiClient.OnConnection
                     .addApi(Places.PLACE_DETECTION_API)
                     .enableAutoManage(getActivity(), this)
                     .build();
-           /* constraintLayout = (RelativeLayout) view.findViewById(R.id.rl);
-            // initializing animation drawable by getting background from constraint layout
-            animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
 
-            // setting enter fade animation duration to 5 seconds
-            animationDrawable.setEnterFadeDuration(3000);
-
-            // setting exit fade animation duration to 2 seconds
-            animationDrawable.setExitFadeDuration(1000);*/
 
             getLocationPermission();
             searchPlace.setOnClickListener(new View.OnClickListener() {

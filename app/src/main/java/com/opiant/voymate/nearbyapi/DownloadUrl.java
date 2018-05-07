@@ -1,4 +1,4 @@
-package com.opiant.voymate;
+package com.opiant.voymate.nearbyapi;
 
 import android.util.Log;
 

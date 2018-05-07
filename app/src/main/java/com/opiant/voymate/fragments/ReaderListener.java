@@ -25,11 +25,12 @@ public class ReaderListener extends Fragment implements TextToSpeech.OnInitListe
     private Button btnSpeak;
     private EditText txtText;
     private static String speed="Normal";
+    View view;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = inflater.inflate(R.layout.activity_reader_listener, container, false);
+        view = inflater.inflate(R.layout.activity_reader_listener, container, false);
         Bundle b = getArguments();
         favlang =b.getString("FavLang");
         Id = b.getInt("ID",0);
@@ -37,7 +38,7 @@ public class ReaderListener extends Fragment implements TextToSpeech.OnInitListe
 
         //btnSpeak = (Button) view.findViewById(R.id.btnSpeak);
 
-        txtText = (EditText) view.findViewById(R.id.txtText);
+        txtText = view.findViewById(R.id.txtText);
 
         if (favlang.equals("hi")){
 

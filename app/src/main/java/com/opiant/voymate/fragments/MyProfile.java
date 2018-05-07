@@ -20,7 +20,7 @@ import com.opiant.voymate.R;
 import static android.content.Context.MODE_PRIVATE;
 
 
-public class MyProfile extends Fragment {
+public class MyProfile extends Fragment implements View.OnClickListener {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -58,8 +58,17 @@ public class MyProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_my_profile, container, false);
+        initViews();
+
+        return view;
+    }
+
+    public void initViews(){
+
+
         Logout = view.findViewById(R.id.logout);
         Name = view.findViewById(R.id.user_profile_name);
         Email = view.findViewById(R.id.user_email);
@@ -79,31 +88,28 @@ public class MyProfile extends Fragment {
 
         if (isFB.equals("no")){
 
-          profilePic.setImageResource(R.drawable.appicon);
+            profilePic.setImageResource(R.drawable.appicon);
         }
 
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        Logout.setOnClickListener(this);
 
-                if (isFB.equals("yes")){
+    }
 
-                    performLogout();
-                }
-                else {
-                    Intent intent = new Intent(getContext(), LoginActivity.class);
-                    SharedPreferences sp = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
-                    SharedPreferences.Editor ueditor = sp.edit();
-                    ueditor.putString("email", "");
-                    ueditor.apply();
-                    startActivity(intent);
-                    //performLogout();
-                }
+    public void logOut(){
+        if (isFB.equals("yes")){
 
-            }
-        });
+            performLogout();
+        }
+        else {
+            Intent intent = new Intent(getContext(), LoginActivity.class);
+            SharedPreferences sp = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+            SharedPreferences.Editor ueditor = sp.edit();
+            ueditor.putString("email", "");
+            ueditor.apply();
+            startActivity(intent);
+            //performLogout();
+        }
 
-        return view;
     }
 
     protected void performLogout() {
@@ -112,7 +118,6 @@ public class MyProfile extends Fragment {
         String logout = getResources().getString(com.facebook.R.string.com_facebook_loginview_log_out_action);
         String cancel = getResources().getString(com.facebook.R.string.com_facebook_loginview_cancel_action);
         String message;
-
 
         message = getResources().getString(R.string.logout_message);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -158,6 +163,18 @@ public class MyProfile extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()){
+
+            case R.id.logout:
+                logOut();
+                break;
+        }
+
     }
 
 

@@ -38,7 +38,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.opiant.voymate.GetNearbyPlacesData;
+import com.opiant.voymate.nearbyapi.GetNearbyPlacesData;
 import com.opiant.voymate.R;
 
 import java.io.IOException;

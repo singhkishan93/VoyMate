@@ -43,20 +43,21 @@ public class LanguageSelection extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 
                if (pos == 1) {
+                    String text = spinnerctrl.getSelectedItem().toString();
+                   Toast.makeText(parent.getContext(), "You selected "+text, Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(parent.getContext(), "You have selected Hindi", Toast.LENGTH_SHORT).show();
-                    setLocale("hi");
+                   setLocale("hi");
                 } else if (pos == 2) {
 
-                    Toast.makeText(parent.getContext(), "You have selected English", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(parent.getContext(), "You selected English", Toast.LENGTH_SHORT).show();
                     setLocale("en");
                 }
                 else if (pos == 3){
-                    Toast.makeText(parent.getContext(), "You have selected French", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(parent.getContext(), "You selected French", Toast.LENGTH_SHORT).show();
                     setLocale("fr");
                 }
                 else if (pos == 4){
-                    Toast.makeText(parent.getContext(), "You have selected Spanish", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(parent.getContext(), "You selected Spanish", Toast.LENGTH_SHORT).show();
                     setLocale("ES");
                 }
 

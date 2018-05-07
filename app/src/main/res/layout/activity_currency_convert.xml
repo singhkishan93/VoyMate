@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".CurrencyConvert">
+    tools:context=".currencyapi.CurrencyConvert">
 
     <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/base_selector"
