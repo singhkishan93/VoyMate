@@ -3,6 +3,7 @@ package com.opiant.voymate.fragments;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,10 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.opiant.voymate.R;
+import com.opiant.voymate.activities.MainActivity;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class Settings extends Fragment implements View.OnClickListener {
@@ -73,18 +77,46 @@ public class Settings extends Fragment implements View.OnClickListener {
           View view = inflater.inflate(R.layout.fragment_settings, container, false);
           final Switch simpleSwitch = (Switch) view.findViewById(R.id.notification);
           ReportProblem = view.findViewById(R.id.report);
+
+        SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+        if (IdShared!=null){
+
+            boolean notiPref = IdShared.getBoolean("notipref",false);
+
+            if (notiPref==true){
+                simpleSwitch.setChecked(true);
+            }
+            else {
+                simpleSwitch.setChecked(false);
+            }
+
+        }
+        else {
+            simpleSwitch.setChecked(true);
+        }
+
         // check current state of a Switch (true or false).
         Boolean switchState = simpleSwitch.isChecked();
-        simpleSwitch.setChecked(true);
+
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
                 if (bChecked) {
                     simpleSwitch.setChecked(true);
                     Toast.makeText(getContext(), ""+bChecked, Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putBoolean("notipref", true);
+                    editor.apply();
+                    //Intent intent = new Intent(getContext(), MainActivity.class);
+                    //startActivity(intent);
                 } else {
                     simpleSwitch.setChecked(false);
                     Toast.makeText(getContext(), ""+bChecked, Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putBoolean("notipref", false);
+                    editor.apply();
                 }
             }
         });

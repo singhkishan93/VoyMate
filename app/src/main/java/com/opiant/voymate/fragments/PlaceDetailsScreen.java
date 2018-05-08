@@ -68,9 +68,9 @@ public class PlaceDetailsScreen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_place_details_screen, container, false);
         //Sight = (TextView)view.findViewById(R.id.textView5);
-        PlaceImage = (ImageView) view.findViewById(R.id.imageView18);
-        PlaceName = (TextView) view.findViewById(R.id.textView5);
-        More = (TextView)view.findViewById(R.id.textView10);
+        PlaceImage = view.findViewById(R.id.imageView18);
+        PlaceName = view.findViewById(R.id.textView5);
+        More = view.findViewById(R.id.textView10);
         KnowMore = (TextView)view.findViewById(R.id.more);
         AboutPlace = (TextView)view.findViewById(R.id.aboutplace);
         final ViewGroup.LayoutParams layoutparams = (RelativeLayout.LayoutParams) AboutPlace.getLayoutParams();

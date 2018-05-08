@@ -1,5 +1,7 @@
 package com.opiant.voymate.fragments;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,10 +14,13 @@ import android.widget.PopupMenu;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.opiant.voymate.activities.MainActivity;
 import com.opiant.voymate.currencyapi.CurrencyConvert;
 import com.opiant.voymate.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class Tools extends Fragment implements View.OnClickListener {
@@ -27,6 +32,7 @@ public class Tools extends Fragment implements View.OnClickListener {
     View view;
     CircleImageView Listen, ConvertCurrency;
     private OnFragmentInteractionListener mListener;
+    String Language;
 
     public Tools() {
         // Required empty public constructor
@@ -89,10 +95,24 @@ public class Tools extends Fragment implements View.OnClickListener {
                 if (language.equals("Hindi")){
 
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    //initializing editor
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putString("language", "hi");
+                    editor.apply();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
 
                 }
                 else if (language.equals("English")){
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    //initializing editor
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putString("language", "en");
+                    editor.apply();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
 
                 }
                 else if (language.equals("Français")){

@@ -257,9 +257,9 @@ public class PlacesOnMap extends AppCompatActivity implements OnMapReadyCallback
 
         }
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, 10));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 10));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 10), 2000, null);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(origin, 12));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 12));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(sLatitude, sLongitude), 12), 2000, null);
 
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.opiant.voymate.fragments;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -21,6 +22,8 @@ import com.opiant.voymate.utils.RecyclerViewClass;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class ExploreScreen extends Fragment implements View.OnClickListener {
 
@@ -37,6 +40,7 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
     View view;
     private OnFragmentInteractionListener mListener;
     int id;
+    String prefLanguage;
 
     public ExploreScreen() {
         // Required empty public constructor
@@ -140,6 +144,27 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         market1.setOnClickListener(this);
         market2.setOnClickListener(this);
         market3.setOnClickListener(this);
+
+        SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+        if (IdShared!=null) {
+            prefLanguage = IdShared.getString("language", "");
+
+            if (prefLanguage.equals("hi")) {
+
+                Monuments.setText(R.string.monument);
+                ReligiousPlace.setText(R.string.religious);
+                Mixed.setText(R.string.mixed);
+                Market.setText(R.string.market);
+            }
+            else if (prefLanguage.equals("en")){
+
+                Monuments.setText(R.string.emonument);
+                ReligiousPlace.setText(R.string.ereligious);
+                Mixed.setText(R.string.emixed);
+                Market.setText(R.string.emarket);
+            }
+        }
     }
 
 

@@ -37,7 +37,7 @@ public class LanguageSelection extends Fragment {
 
             Id = bundle.getInt("ID");
         }
-        spinnerctrl = (Spinner) view.findViewById(R.id.spinner1);
+        spinnerctrl = view.findViewById(R.id.spinner1);
         spinnerctrl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {

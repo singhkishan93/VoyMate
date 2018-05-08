@@ -50,15 +50,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentTransaction mFragmentTransaction;
     private static MainActivity instance;
     Toolbar toolbar;
+    Menu menu;
     ImageView imageView;
     TextView userName,userEmail,placeName;
     String Email,Name,Image,cityName;
+    SharedPreferences IdShared;
+    MenuItem item;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         whiteNotificationBar(toolbar);
@@ -74,16 +77,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Email = bundle.getString("email");
             Name = bundle.getString("myname");
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        frameLayout = (FrameLayout) findViewById(R.id.containerView1);
+        frameLayout = findViewById(R.id.containerView1);
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = getSupportFragmentManager().beginTransaction();
         mFragmentTransaction.replace(R.id.containerView1, new ExploreScreen());
@@ -92,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         // Calling HeaderView Item and Making Click Listener on That
-        SharedPreferences IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
+        IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
         Email= IdShared.getString("email", "");
         Name= IdShared.getString("myname", "");
         /*String latitude = IdShared.getString("Lat","");
@@ -156,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         //super.onBackPressed();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -178,7 +181,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main, menu);
+        this.menu = menu;
+        updateMenuTitles();
         return true;
     }
 
@@ -203,11 +209,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
          if (id == R.id.nav_explore) {
 
+             //item.setTitle("लॉग इन करे");
             Fragment exploreScreen = new ExploreScreen();
             FragmentTransaction exploreScreenTransaction = getSupportFragmentManager().beginTransaction();
             exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
@@ -278,9 +287,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void updateMenuTitles() {
+        String language = IdShared.getString("language","");
+        MenuItem Settings = menu.findItem(R.id.action_settings);
+
+        if (language.equals("hi")) {
+            Settings.setTitle(R.string.hisettings);
+            toolbar.setTitle(R.string.app_name_hi);
+
+        }
     }
 
     private void whiteNotificationBar(View view) {

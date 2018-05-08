@@ -251,10 +251,9 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     }
 
     private void fireIntent(Intent intent, String type) {
-        //intent.putExtra("id_", id);
+
         intent.putExtra("lat", latitude);
         intent.putExtra("lng", longitude);
-        //intent.putExtra("name_", mTitle);
         intent.putExtra("Key", type);
         startActivity(intent);
     }
