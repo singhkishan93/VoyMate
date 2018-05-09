@@ -66,6 +66,8 @@
     >
     <string name="logout_message">Are you sure you want to logout?</string>
     <string name="facebook_app_id">134565184063908</string>
+
+    <!--Option Menu-->
     <string-array name="languages">
         <item>Select language</item>
         <!-- <item>日本語</item>-->
@@ -75,6 +77,7 @@
         <item>Español</item>
     </string-array>
 
+    <!--Currency Base-->
     <string-array name="currencies">
         <item>AUD</item>
         <item>BGN</item>
@@ -108,23 +111,52 @@
         <item>USD</item>
         <item>ZAR</item>
     </string-array>
+
+    <!--Hindi Text-->
     <string name="monument">स्मारक</string>
     <string name="religious">धार्मिक स्थल</string>
     <string name="mixed">मिश्रित बैग</string>
     <string name="market">बाजार और खरीदारी</string>
     <string name="hisettings">सेटिंग्स</string>
+    <string name="hlogin">लॉग इन करें</string>
+    <string name="hemail">ईमेल</string>
+    <string name="hpassword">पारण शब्द</string>
+    <string name="hcpassword">पासवर्ड की पुष्टि कीजिये</string>
+    <string name="hphone">फ़ोन</string>
+    <string name="hsignup">साइन अप करें</string>
+    <string name="hor">या</string>
+    <string name="hfblogin">फेसबुक के साथ हमसे जुड़ें</string>
+    <string name="hname">नाम</string>
+    <string name="hotp">एक बार इस्तेमाल किये जाने वाला पासवर्ड</string>
+    <string name="hlisten">बात सुनो</string>
+    <string name="hhotel">होटल</string>
+    <string name="hsights">जगहें</string>
+    <string name="hrestaurant">खाने की दुकान</string>
+    <string name="hshop">खरीदारी</string>
+    <string name="hhangout">अड्डा</string>
+    <string name="hchangepas">पासवर्ड बदलें</string>
+    <string name="hallownoti">अधिसूचना की अनुमति दें</string>
+    <string name="hreport">समस्या के बारे में बताएं</string>
+    <string name="hchangelang">भाषा बदलो</string>
+    <string name="hchangecurrency">मुद्रा परिवर्तक</string>
+    <string name="hbank">बैंक</string>
+    <string name="hatm">एटीएम</string>
+    <string name="hlogout">लोग आउट</string>
+    <string name="hversion">संस्करण</string>
+    <string name="hrateus">प्ले स्टोर पर हमें रेट करें</string>
+    <string name="hfeedmail">मेल द्वारा प्रतिक्रिया</string>
+    <string name="hlicense">ओपन सोर्स लाइसेंस</string>
+    <string name="hnativelang">अपनी मूल भाषा दर्ज करें</string>
 
 
+     <!--English Text-->
     <string name="emonument">Monuments</string>
     <string name="ereligious">Religious Place</string>
     <string name="emixed">Mixed Bag</string>
     <string name="emarket">Market and Shopping</string>
-
-
-
     <string name="login_success">login success</string>
     <string name="login">LOGIN</string>
-    <string name="hlogin">लॉग इन करें</string>
+    <string name="fblogin">Login with facebook</string>
     <string name="signup">SIGNUP</string>
     <string name="Username">Email</string>
     <string name="name">Name</string>
@@ -143,14 +175,12 @@
     <string name="native_language">Enter Your Native Language</string>
 
     <!-- Strings related to Main -->
-
     <string name="action_main_settings">Settings</string>
     <string name="tab_title_main_1">Cards</string>
     <string name="tab_title_main_2">Dialogs</string>
     <string name="tab_title_main_3">Widgets</string>
     <string name="main_snack_bar">This is a snack bar</string>
     <string name="main_snack_bar_action">Okay</string>
-
     <string name="main_card_title">Title goes here</string>
     <string name="main_card_title_short">Title</string>
     <string name="main_card_subtitle">Subtitle here</string>
@@ -159,7 +189,6 @@
     <string name="main_card_button_2">ACTION 2</string>
     <string name="main_flat_button_1_clicked">Flat Button 1</string>
     <string name="main_flat_button_2_clicked">Flat Button 2</string>
-
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_neutral">Neutral</string>

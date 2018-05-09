@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
@@ -14,6 +15,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -67,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         whiteNotificationBar(toolbar);
         runPermission();
         initViews();
+
+
 
     }
 
@@ -125,7 +130,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //placeName = (TextView) headerview.findViewById(R.id.location);
         //placeName.setText(cityName);
 
-        Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
+
+        Display mdisp = getWindowManager().getDefaultDisplay();
+        Point mdispSize = new Point();
+        mdisp.getSize(mdispSize);
+        int maxX = mdispSize.x;
+        int maxY = mdispSize.y;
+
+        Toast.makeText(getApplicationContext(), "Welcome:"+ maxX+" : "+maxY,Toast.LENGTH_LONG).show();
 
     }
 
@@ -310,5 +323,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             view.setSystemUiVisibility(flags);
             getWindow().setStatusBarColor(Color.parseColor("#11A2fb"));
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // MotionEvent object holds X-Y values
+        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+            String text = "You click at x = " + event.getX() + " and y = " + event.getY();
+            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        }
+
+        return super.onTouchEvent(event);
     }
 }

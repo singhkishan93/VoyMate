@@ -4,24 +4,25 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.opiant.voymate.R;
 import com.opiant.voymate.adapters.CustomAdapter;
 import com.opiant.voymate.utils.RecyclerViewClass;
-
 import java.util.List;
-
 import static android.content.Context.MODE_PRIVATE;
 
 
@@ -111,22 +112,22 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
 
     public void initViews(){
 
-        Monuments = (TextView)view.findViewById(R.id.magazines);
-        ReligiousPlace = (TextView)view.findViewById(R.id.textView2);
-        Mixed = (TextView)view.findViewById(R.id.textView3);
-        Market = (TextView)view.findViewById(R.id.textView4);
-        monuments1 = (ImageView) view.findViewById(R.id.imageView2);
-        monuments2 = (ImageView) view.findViewById(R.id.imageView3);
-        monuments3 = (ImageView) view.findViewById(R.id.imageView5);
-        religious1 = (ImageView) view.findViewById(R.id.imageView6);
-        religious2 = (ImageView) view.findViewById(R.id.imageView7);
-        religious3 = (ImageView) view.findViewById(R.id.imageView9);
-        mixed1 = (ImageView) view.findViewById(R.id.imageView10);
-        mixed2 = (ImageView) view.findViewById(R.id.imageView11);
-        mixed3 = (ImageView) view.findViewById(R.id.imageView13);
-        market1 = (ImageView) view.findViewById(R.id.imageView14);
-        market2 = (ImageView) view.findViewById(R.id.imageView15);
-        market3 = (ImageView) view.findViewById(R.id.imageView17);
+        Monuments = view.findViewById(R.id.magazines);
+        ReligiousPlace = view.findViewById(R.id.textView2);
+        Mixed = view.findViewById(R.id.textView3);
+        Market = view.findViewById(R.id.textView4);
+        monuments1 = view.findViewById(R.id.imageView2);
+        monuments2 = view.findViewById(R.id.imageView3);
+        monuments3 = view.findViewById(R.id.imageView5);
+        religious1 = view.findViewById(R.id.imageView6);
+        religious2 = view.findViewById(R.id.imageView7);
+        religious3 = view.findViewById(R.id.imageView9);
+        mixed1 = view.findViewById(R.id.imageView10);
+        mixed2 = view.findViewById(R.id.imageView11);
+        mixed3 = view.findViewById(R.id.imageView13);
+        market1 = view.findViewById(R.id.imageView14);
+        market2 = view.findViewById(R.id.imageView15);
+        market3 = view.findViewById(R.id.imageView17);
 
         Monuments.setOnClickListener(this);
         ReligiousPlace.setOnClickListener(this);
@@ -144,6 +145,11 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
         market1.setOnClickListener(this);
         market2.setOnClickListener(this);
         market3.setOnClickListener(this);
+
+        Monuments.setText(R.string.emonument);
+        ReligiousPlace.setText(R.string.ereligious);
+        Mixed.setText(R.string.emixed);
+        Market.setText(R.string.emarket);
 
         SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
 
@@ -165,6 +171,13 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 Market.setText(R.string.emarket);
             }
         }
+
+       /* Display mdisp = getActivity().getWindowManager().getDefaultDisplay();
+        Point mdispSize = new Point();
+        mdisp.getSize(mdispSize);
+        int maxX = mdispSize.x;
+        int maxY = mdispSize.y;
+        Toast.makeText(getContext(),"Co:"+maxX+" "+maxY,Toast.LENGTH_SHORT).show();*/
     }
 
 

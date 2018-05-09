@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     String id,personGivenName,personFamilyName,personEmail,personId,birthday,android_id;
     Bundle bundle;
-    //private final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+    SharedPreferences IdShared;
     String Email = "voymateapp@android.com", Password = "voymate",userName="VoyMate";
 
     @Override
@@ -51,13 +51,26 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         callbackManager = CallbackManager.Factory.create();
         Intent in = getIntent();
-        //Getting bundle
         Bundle b = in.getExtras();
+
+        IdShared = getSharedPreferences("VoyMate", MODE_PRIVATE);
+        String langCode = IdShared.getString("language","");
 
         etEmail = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         Login = findViewById(R.id.bt_go);
         fab = findViewById(R.id.fab);
+        loginButton = findViewById(R.id.fblogin);
+
+        if (langCode.equals("hi")){
+
+            etEmail.setHint(R.string.hemail);
+            etPassword.setHint(R.string.hpassword);
+            Login.setText(R.string.hlogin);
+            loginButton.setText(R.string.hfblogin);
+        }
+
+
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        loginButton = (LoginButton) findViewById(R.id.fblogin);
+
         loginButton.setReadPermissions("email","public_profile");
 
         boolean loggedIn = AccessToken.getCurrentAccessToken() == null;
