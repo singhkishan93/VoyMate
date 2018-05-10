@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/tv_about_version"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_card_about_1_1"
                 android:layout_marginTop="@dimen/text_margin_small"

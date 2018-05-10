@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.opiant.voymate.activities.MainActivity;
@@ -33,7 +34,8 @@ public class Tools extends Fragment implements View.OnClickListener {
     CircleImageView Listen, ConvertCurrency;
     private OnFragmentInteractionListener mListener;
     String Language;
-
+    TextView changeLanguage,convertCurrency;
+    SharedPreferences IdShared;
     public Tools() {
         // Required empty public constructor
     }
@@ -68,6 +70,25 @@ public class Tools extends Fragment implements View.OnClickListener {
 
         ConvertCurrency = view.findViewById(R.id.currency);
         Listen = view.findViewById(R.id.listen);
+        changeLanguage = view.findViewById(R.id.textView15);
+        convertCurrency = view.findViewById(R.id.textView18);
+
+        IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+        if (IdShared!=null) {
+            Language = IdShared.getString("language", "");
+
+            if (Language.equals("hi")) {
+
+                changeLanguage.setText(R.string.hchangelang);
+                convertCurrency.setText(R.string.hchangecurrency);
+
+            }
+            else if (Language.equals("en")){
+
+
+            }
+        }
 
         ConvertCurrency.setOnClickListener(this);
         Listen.setOnClickListener(this);

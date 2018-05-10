@@ -2,6 +2,7 @@ package com.opiant.voymate.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -25,13 +26,15 @@ import com.opiant.voymate.activities.PlacesOnMap;
 
 import java.util.Locale;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class PlaceInfo extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    TextView Sight, Ratings,PlaceName,More,AboutPlace,KnowMore;
+    TextView Sight, txtListen,PlaceName,txtHangout,AboutPlace,KnowMore,Hotel,Shop,txtRestaurant;
     ImageView PlaceImage;
     int Id;
     String moreTxt;
@@ -40,6 +43,8 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     LinearLayout Activities,Sights,Hangout,Restaurant,Shopping,Listen;
     private OnFragmentInteractionListener mListener;
     View view;
+    String Language;
+    SharedPreferences IdShared;
 
     public PlaceInfo() {
         // Required empty public constructor
@@ -84,6 +89,35 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
         Restaurant = view.findViewById(R.id.restau);
         Shopping = view.findViewById(R.id.shoppp);
         Listen = view.findViewById(R.id.listen);
+
+
+        Sight = view.findViewById(R.id.mntext);
+        txtHangout = view.findViewById(R.id.cttext);
+        txtListen = view.findViewById(R.id.fftext);
+        txtRestaurant = view.findViewById(R.id.rstext);
+        Hotel = view.findViewById(R.id.hgtext);
+        Shop = view.findViewById(R.id.shtext);
+
+        IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+
+        if (IdShared!=null) {
+            Language = IdShared.getString("language", "");
+
+            if (Language.equals("hi")) {
+
+                Hotel.setText(R.string.hhotel);
+                txtRestaurant.setText(R.string.hrestaurant);
+                Sight.setText(R.string.hsights);
+                txtListen.setText(R.string.hlisten);
+                Shop.setText(R.string.hshop);
+                txtHangout.setText(R.string.hhangout);
+            }
+            else if (Language.equals("en")){
+
+
+            }
+        }
 
         Activities.setOnClickListener(this);
         Hangout.setOnClickListener(this);

@@ -1,6 +1,7 @@
 package com.opiant.voymate.fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,8 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.opiant.voymate.R;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class Help extends Fragment implements View.OnClickListener {
@@ -24,6 +28,9 @@ public class Help extends Fragment implements View.OnClickListener {
     private static final int REQUEST_PHONE_CALL = 1;
     private OnFragmentInteractionListener mListener;
     View view;
+    TextView ffText;
+    String Language;
+    SharedPreferences IdShared;
 
     public Help() {
         // Required empty public constructor
@@ -57,6 +64,23 @@ public class Help extends Fragment implements View.OnClickListener {
 
     public void initViews(){
         LinearLayout SOS = view.findViewById(R.id.sos);
+         ffText = view.findViewById(R.id.fftext);
+
+        IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+        if (IdShared!=null) {
+            Language = IdShared.getString("language", "");
+
+            if (Language.equals("hi")) {
+
+            ffText.setText(R.string.hemergency);
+
+            }
+            else if (Language.equals("en")){
+
+
+            }
+        }
 
         SOS.setOnClickListener(this);
 

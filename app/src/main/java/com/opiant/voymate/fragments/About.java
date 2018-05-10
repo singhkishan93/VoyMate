@@ -1,6 +1,7 @@
 package com.opiant.voymate.fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +21,8 @@ import com.opiant.voymate.Constant;
 import com.opiant.voymate.R;
 import com.opiant.voymate.utils.AppUtils;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class About extends Fragment implements View.OnClickListener {
 
@@ -30,6 +33,12 @@ public class About extends Fragment implements View.OnClickListener {
     private String mParam2;
     private OnFragmentInteractionListener mListener;
     View view;
+    String Language;
+    TextView rateOnStore,feedEmail,Address;
+    SharedPreferences IdShared;
+
+
+
     public About() {
         // Required empty public constructor
     }
@@ -41,6 +50,7 @@ public class About extends Fragment implements View.OnClickListener {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -84,6 +94,30 @@ public class About extends Fragment implements View.OnClickListener {
         TextView tv_about_version = view.findViewById(R.id.tv_about_version);
         tv_about_version.setText(AppUtils.getVersionName(getContext()));
         tv_about_version.startAnimation(alphaAnimation);
+
+        rateOnStore=view.findViewById(R.id.playstore);
+        feedEmail=view.findViewById(R.id.feedemail);
+        Address=view.findViewById(R.id.address);
+
+        IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+        if (IdShared!=null) {
+            Language = IdShared.getString("language", "");
+
+            if (Language.equals("hi")) {
+
+                rateOnStore.setText(R.string.hrateus);
+                feedEmail.setText(R.string.hfeedmail);
+                Address.setText(R.string.haddress);
+                //tv_about_version.setText(R.string.hversion);
+
+            }
+            else if (Language.equals("en")){
+
+
+            }
+        }
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

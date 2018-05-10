@@ -45,6 +45,7 @@
             android:text="Change Language"
             android:textColor="@color/white"
             android:textSize="18dp"
+            android:gravity="center"
             tools:ignore="RtlCompat" />
 
         <TextView
@@ -55,6 +56,7 @@
             android:layout_alignTop="@+id/textView15"
             android:layout_marginEnd="27dp"
             android:text="Convert Currency"
+            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="18dp"
             tools:ignore="RtlCompat" />

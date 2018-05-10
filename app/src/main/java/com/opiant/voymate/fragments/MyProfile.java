@@ -77,13 +77,23 @@ public class MyProfile extends Fragment implements View.OnClickListener {
         profilePic = view.findViewById(R.id.user_profile_photo);
 
         SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+        String prefLanguage = IdShared.getString("language","");
         userEmail = IdShared.getString("email", "");
         userName = IdShared.getString("myname", "");
         isFB = IdShared.getString("isFB", "");
 
+        if (prefLanguage.equals("hi")){
+
+            Logout.setText(R.string.hlogout);
+            Language.setText("हिंदी");
+        }
+        else if (prefLanguage.equals("en")){
+            Language.setText("English");
+        }
+
         Name.setText(userName);
         Email.setText(userEmail);
-        Language.setText("English");
+
         Mobile.setText("9599367430");
 
         if (isFB.equals("no")){

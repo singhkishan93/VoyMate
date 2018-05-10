@@ -27,7 +27,7 @@
 
             <include layout="@layout/card_about_2" />
 
-           <include layout="@layout/card_about_source_licenses" />
+           <!--<include layout="@layout/card_about_source_licenses" />-->
 
         </LinearLayout>
     </ScrollView>

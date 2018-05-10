@@ -147,6 +147,52 @@
     <string name="hfeedmail">मेल द्वारा प्रतिक्रिया</string>
     <string name="hlicense">ओपन सोर्स लाइसेंस</string>
     <string name="hnativelang">अपनी मूल भाषा दर्ज करें</string>
+    <string name="hemergency">आपातकालीन संपर्क</string>
+    <string name="hglad">देखकर खुशी हुई</string>
+    <string name="haddress">नई दिल्ली, भारत</string>
+    <string name="hhospital">अस्पताल</string>
+    <string name="hpolice">पुलिस स्टेशन</string>
+
+
+    <!--French Text-->
+
+    <string name="fmonument">Mémorial</string>
+    <string name="freligious">Lieu religieux</string>
+    <string name="fmixed">मSac assaisonné</string>
+    <string name="fmarket">Marché et shopping</string>
+    <string name="fisettings">Paramètres</string>
+    <string name="flogin">Connectez-vous</string>
+    <string name="femail">Email</string>
+    <string name="fpassword">Mot de passe</string>
+    <string name="fcpassword">Confirmer le mot de passe</string>
+    <string name="fphone">Mobile</string>
+    <string name="fsignup">"s'inscrire"</string>
+    <string name="fror">ou</string>
+    <string name="ffblogin">Se connecter avec Facebook</string>
+    <string name="fname">prénom</string>
+    <string name="fotp">Mot de passe à usage unique</string>
+    <string name="flisten">écouter</string>
+    <string name="fhotel">Un hôtel</string>
+    <string name="fsights">Les curiosités</string>
+    <string name="frestaurant">Restaurant</string>
+    <string name="fshop">Boutique</string>
+    <string name="fhangout">Trainer dehors</string>
+    <string name="fchangepas">Changer le mot de passe</string>
+    <string name="fallownoti">Autoriser la notification</string>
+    <string name="freport">rapport</string>
+    <string name="fchangelang">Changer de langue</string>
+    <string name="fchangecurrency">Convertisseur de devise</string>
+    <string name="fbank">Banque</string>
+    <string name="fatm">Au m</string>
+    <string name="flogout">Connectez - Out</string>
+    <string name="fversion">संस्करण</string>
+    <string name="frateus">Evaluez-nous sur Play Store</string>
+    <string name="ffeedmail">मेल द्वारा प्रतिक्रिया</string>
+    <string name="flicense">ओपन सोर्स लाइसेंस</string>
+    <string name="fnativelang">अपनी मूल भाषा दर्ज करें</string>
+    <string name="femergency">आपातकालीन संपर्क</string>
+    <string name="fglad">देखकर खुशी हुई</string>
+    <string name="faddress">नई दिल्ली, भारत</string>
 
 
      <!--English Text-->

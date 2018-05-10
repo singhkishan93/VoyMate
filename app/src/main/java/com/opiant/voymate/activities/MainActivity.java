@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView userName,userEmail,placeName;
     String Email,Name,Image,cityName;
     SharedPreferences IdShared;
-    MenuItem item;
+    private static final int MENU_EDIT = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //int ID = navigationView.getMenu().findItem()
+
+
 
         frameLayout = findViewById(R.id.containerView1);
         mFragmentManager = getSupportFragmentManager();
@@ -132,14 +136,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Toast.makeText(getApplicationContext(), "Welcome:"+ Email,Toast.LENGTH_LONG).show();
 
-        Display mdisp = getWindowManager().getDefaultDisplay();
+       /* Display mdisp = getWindowManager().getDefaultDisplay();
         Point mdispSize = new Point();
         mdisp.getSize(mdispSize);
         int maxX = mdispSize.x;
-        int maxY = mdispSize.y;
+        int maxY = mdispSize.y;*/
 
-        Toast.makeText(getApplicationContext(), "Welcome:"+ maxX+" : "+maxY,Toast.LENGTH_LONG).show();
+        //addMenuItemInNavMenuDrawer();
+    }
 
+    private void addMenuItemInNavMenuDrawer() {
+        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+
+        Menu menu = navView.getMenu();
+        Menu submenu = menu.addSubMenu("New Super SubMenu");
+
+        submenu.add("Super Item1");
+        submenu.add("Super Item2");
+        submenu.add("Super Item3");
+
+        navView.invalidate();
     }
 
     public void runPermission(){
@@ -199,6 +215,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.menu = menu;
         updateMenuTitles();
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        //menu.clear();
+        //menu.add(0, MENU_EDIT, Menu.NONE, getString(R.string.haddress)).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        //menu.add(0, MENU_DELETE, Menu.NONE, getString(R.string.menu_action_delete)).setIcon(R.drawable.ic_action_delete).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override

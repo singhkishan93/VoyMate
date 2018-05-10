@@ -2,6 +2,7 @@ package com.opiant.voymate.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.AnimationDrawable;
 import android.location.Location;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -26,6 +28,7 @@ import com.opiant.voymate.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.Manifest.permission.SEND_SMS;
+import static android.content.Context.MODE_PRIVATE;
 import static android.support.v4.content.ContextCompat.checkSelfPermission;
 
 
@@ -42,6 +45,9 @@ public class NearBy extends Fragment implements View.OnClickListener{
     Bundle b = new Bundle();
     private String Values;
     Intent intent;
+    String Language;
+    TextView Hotel,Restaurant,BankText,AtmText,HospitalText,Police;
+    SharedPreferences IdShared;
 
     public NearBy() {
         // Required empty public constructor
@@ -84,6 +90,35 @@ public class NearBy extends Fragment implements View.OnClickListener{
         PoliceStation = view.findViewById(R.id.police);
         Hotels = view.findViewById(R.id.hotel);
         Restaurent = view.findViewById(R.id.restaurant);
+
+        Hotel = view.findViewById(R.id.hoteltxt);
+        Restaurant = view.findViewById(R.id.rstatext);
+        BankText = view.findViewById(R.id.mntext);
+        AtmText = view.findViewById(R.id.hgtext);
+        HospitalText = view.findViewById(R.id.shtext);
+        Police = view.findViewById(R.id.rstext);
+
+        IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+
+
+        if (IdShared!=null) {
+            Language = IdShared.getString("language", "");
+
+            if (Language.equals("hi")) {
+
+              Hotel.setText(R.string.hhotel);
+              Restaurant.setText(R.string.hrestaurant);
+              BankText.setText(R.string.hbank);
+              AtmText.setText(R.string.hhotel);
+              HospitalText.setText(R.string.hhospital);
+              Police.setText(R.string.hpolice);
+            }
+            else if (Language.equals("en")){
+
+
+            }
+        }
+
 
         Atm.setOnClickListener(this);
         Bank.setOnClickListener(this);

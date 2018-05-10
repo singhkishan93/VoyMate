@@ -37,7 +37,7 @@ public class Settings extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    TextView ReportProblem;
+    TextView ReportProblem,ChangePassword,AllowNoti;
     String info="Phone Details:\n";
     private static final String FILENAME = "ReportProblem.txt";
     private FileWriter writer;
@@ -77,11 +77,21 @@ public class Settings extends Fragment implements View.OnClickListener {
           View view = inflater.inflate(R.layout.fragment_settings, container, false);
           final Switch simpleSwitch = (Switch) view.findViewById(R.id.notification);
           ReportProblem = view.findViewById(R.id.report);
+          ChangePassword = view.findViewById(R.id.changepass);
+
 
         SharedPreferences IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
         if (IdShared!=null){
 
             boolean notiPref = IdShared.getBoolean("notipref",false);
+            String Language = IdShared.getString("language","");
+
+            if (Language.equals("hi")){
+
+                ReportProblem.setText(R.string.hreport);
+                ChangePassword.setText(R.string.hchangepas);
+                simpleSwitch.setText(R.string.hallownoti);
+            }
 
             if (notiPref==true){
                 simpleSwitch.setChecked(true);
