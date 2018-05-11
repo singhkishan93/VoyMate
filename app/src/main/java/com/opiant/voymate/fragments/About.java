@@ -34,7 +34,7 @@ public class About extends Fragment implements View.OnClickListener {
     private OnFragmentInteractionListener mListener;
     View view;
     String Language;
-    TextView rateOnStore,feedEmail,Address;
+    TextView rateOnStore,feedEmail,Address,txtAbout,txtGlad;
     SharedPreferences IdShared;
 
 
@@ -98,6 +98,8 @@ public class About extends Fragment implements View.OnClickListener {
         rateOnStore=view.findViewById(R.id.playstore);
         feedEmail=view.findViewById(R.id.feedemail);
         Address=view.findViewById(R.id.address);
+        txtAbout=view.findViewById(R.id.tv_card_about_2_1);
+        txtGlad=view.findViewById(R.id.tv_card_about_1_1);
 
         IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
 
@@ -109,11 +111,16 @@ public class About extends Fragment implements View.OnClickListener {
                 rateOnStore.setText(R.string.hrateus);
                 feedEmail.setText(R.string.hfeedmail);
                 Address.setText(R.string.haddress);
-                //tv_about_version.setText(R.string.hversion);
+                txtAbout.setText(R.string.hheader);
+                txtGlad.setText(R.string.hglad);
 
             }
-            else if (Language.equals("en")){
-
+            else if (Language.equals("fr")){
+                rateOnStore.setText(R.string.frateus);
+                feedEmail.setText(R.string.ffeedmail);
+                Address.setText(R.string.faddress);
+                txtAbout.setText(R.string.fheader);
+                txtGlad.setText(R.string.fglad);
 
             }
         }

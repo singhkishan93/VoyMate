@@ -163,12 +163,12 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 Mixed.setText(R.string.mixed);
                 Market.setText(R.string.market);
             }
-            else if (prefLanguage.equals("en")){
+            else if (prefLanguage.equals("fr")){
 
-                Monuments.setText(R.string.emonument);
-                ReligiousPlace.setText(R.string.ereligious);
-                Mixed.setText(R.string.emixed);
-                Market.setText(R.string.emarket);
+                Monuments.setText(R.string.fmonument);
+                ReligiousPlace.setText(R.string.freligious);
+                Mixed.setText(R.string.fmixed);
+                Market.setText(R.string.fmarket);
             }
         }
 

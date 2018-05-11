@@ -69,6 +69,15 @@ public class LoginActivity extends AppCompatActivity {
             Login.setText(R.string.hlogin);
             loginButton.setText(R.string.hfblogin);
         }
+        else if (langCode.equals("fr")){
+
+            etEmail.setHint(R.string.femail);
+            etPassword.setHint(R.string.fpassword);
+            Login.setText(R.string.flogin);
+            loginButton.setText(R.string.ffblogin);
+        }
+
+        //whiteNotificationBar();
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -337,7 +346,7 @@ public class LoginActivity extends AppCompatActivity {
             int flags = view.getSystemUiVisibility();
             flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
             view.setSystemUiVisibility(flags);
-            getWindow().setStatusBarColor(Color.parseColor("#11A2fb"));
+            getWindow().setStatusBarColor(Color.parseColor("#312645"));
         }
     }
 

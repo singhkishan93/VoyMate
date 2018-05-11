@@ -76,8 +76,8 @@ public class Help extends Fragment implements View.OnClickListener {
             ffText.setText(R.string.hemergency);
 
             }
-            else if (Language.equals("en")){
-
+            else if (Language.equals("fr")){
+                ffText.setText(R.string.femergency);
 
             }
         }

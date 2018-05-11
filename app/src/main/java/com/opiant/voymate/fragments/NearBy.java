@@ -109,16 +109,20 @@ public class NearBy extends Fragment implements View.OnClickListener{
               Hotel.setText(R.string.hhotel);
               Restaurant.setText(R.string.hrestaurant);
               BankText.setText(R.string.hbank);
-              AtmText.setText(R.string.hhotel);
+              AtmText.setText(R.string.hatm);
               HospitalText.setText(R.string.hhospital);
               Police.setText(R.string.hpolice);
             }
-            else if (Language.equals("en")){
-
+            else if (Language.equals("fr")){
+                Hotel.setText(R.string.fhotel);
+                Restaurant.setText(R.string.frestaurant);
+                BankText.setText(R.string.fbank);
+                AtmText.setText(R.string.fatm);
+                HospitalText.setText(R.string.fhospital);
+                Police.setText(R.string.fpolice);
 
             }
         }
-
 
         Atm.setOnClickListener(this);
         Bank.setOnClickListener(this);

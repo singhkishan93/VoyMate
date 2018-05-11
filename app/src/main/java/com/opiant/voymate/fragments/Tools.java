@@ -84,9 +84,10 @@ public class Tools extends Fragment implements View.OnClickListener {
                 convertCurrency.setText(R.string.hchangecurrency);
 
             }
-            else if (Language.equals("en")){
+            else if (Language.equals("fr")){
 
-
+                changeLanguage.setText(R.string.fchangelang);
+                convertCurrency.setText(R.string.fchangecurrency);
             }
         }
 
@@ -124,6 +125,12 @@ public class Tools extends Fragment implements View.OnClickListener {
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     startActivity(intent);
 
+                    /*Fragment exploreScreen = new Tools();
+                    FragmentTransaction exploreScreenTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    exploreScreenTransaction.replace(R.id.containerView1, exploreScreen);
+                    exploreScreenTransaction.addToBackStack(null);
+                    exploreScreenTransaction.commit();*/
+
                 }
                 else if (language.equals("English")){
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
@@ -138,6 +145,13 @@ public class Tools extends Fragment implements View.OnClickListener {
                 }
                 else if (language.equals("Français")){
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    //initializing editor
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putString("language", "fr");
+                    editor.apply();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
 
                 }
                 else if (language.equals("Español")){

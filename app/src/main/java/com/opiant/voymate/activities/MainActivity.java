@@ -338,6 +338,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             toolbar.setTitle(R.string.app_name_hi);
 
         }
+        else if (language.equals("fr")){
+
+            Settings.setTitle(R.string.fsetting);
+            toolbar.setTitle(R.string.app_name);
+        }
     }
 
     private void whiteNotificationBar(View view) {

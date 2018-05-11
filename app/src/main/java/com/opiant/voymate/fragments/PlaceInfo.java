@@ -34,7 +34,7 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-    TextView Sight, txtListen,PlaceName,txtHangout,AboutPlace,KnowMore,Hotel,Shop,txtRestaurant;
+    TextView Sight, txtListen,PlaceName,txtHangout,AboutPlace,KnowMore,Hotel,Shop,txtRestaurant,txtHint;
     ImageView PlaceImage;
     int Id;
     String moreTxt;
@@ -89,6 +89,7 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
         Restaurant = view.findViewById(R.id.restau);
         Shopping = view.findViewById(R.id.shoppp);
         Listen = view.findViewById(R.id.listen);
+        txtHint = view.findViewById(R.id.expandable_text);
 
 
         Sight = view.findViewById(R.id.mntext);
@@ -112,8 +113,16 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
                 txtListen.setText(R.string.hlisten);
                 Shop.setText(R.string.hshop);
                 txtHangout.setText(R.string.hhangout);
+
             }
-            else if (Language.equals("en")){
+            else if (Language.equals("fr")){
+
+                Hotel.setText(R.string.fhotel);
+                txtRestaurant.setText(R.string.frestaurant);
+                Sight.setText(R.string.fsights);
+                txtListen.setText(R.string.flisten);
+                Shop.setText(R.string.fshop);
+                txtHangout.setText(R.string.fhangout);
 
 
             }
@@ -146,7 +155,18 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.redfort);
             PlaceName.setText("Red Fort");
-            AboutPlace.setText(R.string.red_hint);
+            //AboutPlace.setText(R.string.red_hint);
+            if (Language.equals("hi")) {
+                AboutPlace.setText(R.string.hred_hint);
+            }
+            else if (Language.equals("fr")){
+
+                AboutPlace.setText(R.string.fred_hint);
+            }
+            else {
+
+                AboutPlace.setText(R.string.red_hint);
+            }
 
         }
         else if (Id==2){

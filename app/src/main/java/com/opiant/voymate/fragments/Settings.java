@@ -92,6 +92,12 @@ public class Settings extends Fragment implements View.OnClickListener {
                 ChangePassword.setText(R.string.hchangepas);
                 simpleSwitch.setText(R.string.hallownoti);
             }
+            else  if (Language.equals("fr")){
+
+                ReportProblem.setText(R.string.freport);
+                ChangePassword.setText(R.string.fchangepas);
+                simpleSwitch.setText(R.string.fallownoti);
+            }
 
             if (notiPref==true){
                 simpleSwitch.setChecked(true);
