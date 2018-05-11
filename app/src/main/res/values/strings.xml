@@ -162,6 +162,10 @@
     <string name="logout">Logout</string>
     <string name="know">अधिक जानिए</string>
     <string name="hheader">अगर आपको ऐप पसंद आया, तो मुझसे संपर्क करने में संकोच न करें।</string>
+    <string name="lalkila">लाल किला</string>
+    <string name="akshardham">अक्षरधाम</string>
+    <string name="tajmahal">ताज महल</string>
+    <string name="dillihaat">दीली हाट</string>
 
 
     <!--French Text-->
@@ -207,10 +211,31 @@
     <string name="fpolice">"Poste de police"</string>
     <string name="fknow">"savoir plus"</string>
     <string name="fheader">"Si vous avez aimé l'application, n'hésitez pas à me contacter."</string>
+    <string name="flalkila">"fort Rouge"</string>
 
 
     <!--Spainis Text-->
-
+    <string name="smonument">Memorial</string>
+    <string name="sreligious">Lugar religioso</string>
+    <string name="smixed">Bolso mixto</string>
+    <string name="sshoping">Mercado y compras</string>
+    <string name="ssettings">Configuraciones</string>
+    <string name="slisten">Escucha</string>
+    <string name="schangelang">Cambiar idioma</string>
+    <string name="scurrencyconvert">Cambiador de dinero</string>
+    <string name="schangepass">Cambiador de dinero</string>
+    <string name="sallownoti">Permitir notificación</string>
+    <string name="sreport">Cuéntanos sobre el problema</string>
+    <string name="shotel">Hotel</string>
+    <string name="sresta">Restaurante</string>
+    <string name="sbank">Banco</string>
+    <string name="satm">Cajero automático</string>
+    <string name="shospital">Hospital</string>
+    <string name="spolice">Estación de policía</string>
+    <string name="semergency">Contacto de emergencia</string>
+    <string name="sshopping">Compras</string>
+    <string name="shangout">Colgar</string>
+    <string name="slogout">Cerrar sesión</string>
 
      <!--English Text-->
     <string name="emonument">Monuments</string>

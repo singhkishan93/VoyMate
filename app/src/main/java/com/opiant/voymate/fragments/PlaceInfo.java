@@ -126,6 +126,17 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
 
 
             }
+            else if (Language.equals("ES")){
+
+                Hotel.setText(R.string.shotel);
+                txtRestaurant.setText(R.string.sresta);
+                Sight.setText(R.string.fsights);
+                txtListen.setText(R.string.slisten);
+                Shop.setText(R.string.sshoping);
+                txtHangout.setText(R.string.shangout);
+
+
+            }
         }
 
         Activities.setOnClickListener(this);
@@ -154,17 +165,18 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
             String text = a+finalURl+b;
             KnowMore.setText(Html.fromHtml(text));
             PlaceImage.setImageResource(R.drawable.redfort);
-            PlaceName.setText("Red Fort");
+
             //AboutPlace.setText(R.string.red_hint);
             if (Language.equals("hi")) {
+                PlaceName.setText(R.string.lalkila);
                 AboutPlace.setText(R.string.hred_hint);
             }
             else if (Language.equals("fr")){
-
+                PlaceName.setText(R.string.flalkila);
                 AboutPlace.setText(R.string.fred_hint);
             }
             else {
-
+                PlaceName.setText("Red Fort");
                 AboutPlace.setText(R.string.red_hint);
             }
 

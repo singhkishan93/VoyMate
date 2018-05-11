@@ -80,6 +80,10 @@ public class Help extends Fragment implements View.OnClickListener {
                 ffText.setText(R.string.femergency);
 
             }
+            else if (Language.equals("ES")){
+                ffText.setText(R.string.semergency);
+
+            }
         }
 
         SOS.setOnClickListener(this);

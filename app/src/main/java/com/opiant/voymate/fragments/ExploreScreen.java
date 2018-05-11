@@ -170,6 +170,13 @@ public class ExploreScreen extends Fragment implements View.OnClickListener {
                 Mixed.setText(R.string.fmixed);
                 Market.setText(R.string.fmarket);
             }
+            else if (prefLanguage.equals("ES")){
+
+                Monuments.setText(R.string.smonument);
+                ReligiousPlace.setText(R.string.sreligious);
+                Mixed.setText(R.string.smixed);
+                Market.setText(R.string.sshoping);
+            }
         }
 
        /* Display mdisp = getActivity().getWindowManager().getDefaultDisplay();

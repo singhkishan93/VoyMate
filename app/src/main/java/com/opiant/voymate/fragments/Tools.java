@@ -89,6 +89,11 @@ public class Tools extends Fragment implements View.OnClickListener {
                 changeLanguage.setText(R.string.fchangelang);
                 convertCurrency.setText(R.string.fchangecurrency);
             }
+            else if (Language.equals("ES")){
+
+                changeLanguage.setText(R.string.schangelang);
+                convertCurrency.setText(R.string.scurrencyconvert);
+            }
         }
 
         ConvertCurrency.setOnClickListener(this);
@@ -156,6 +161,13 @@ public class Tools extends Fragment implements View.OnClickListener {
                 }
                 else if (language.equals("Español")){
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
+                    SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
+                    //initializing editor
+                    SharedPreferences.Editor editor = passwordPref.edit();
+                    editor.putString("language", "ES");
+                    editor.apply();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
 
                 }
 

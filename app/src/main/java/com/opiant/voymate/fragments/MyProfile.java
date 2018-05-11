@@ -91,6 +91,10 @@ public class MyProfile extends Fragment implements View.OnClickListener {
             Language.setText("français");
             Logout.setText(R.string.flogout);
         }
+        else if (prefLanguage.equals("ES")){
+            Language.setText("Español");
+            Logout.setText(R.string.slogout);
+        }
         else if (prefLanguage.equals("en")){
             Language.setText("English");
             Logout.setText(R.string.logout);

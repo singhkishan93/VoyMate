@@ -8,28 +8,16 @@ import android.graphics.drawable.AnimationDrawable;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.opiant.voymate.activities.NearByPlace;
 import com.opiant.voymate.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
-
-import static android.Manifest.permission.SEND_SMS;
 import static android.content.Context.MODE_PRIVATE;
-import static android.support.v4.content.ContextCompat.checkSelfPermission;
+
 
 
 
@@ -100,7 +88,6 @@ public class NearBy extends Fragment implements View.OnClickListener{
 
         IdShared = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);
 
-
         if (IdShared!=null) {
             Language = IdShared.getString("language", "");
 
@@ -120,6 +107,15 @@ public class NearBy extends Fragment implements View.OnClickListener{
                 AtmText.setText(R.string.fatm);
                 HospitalText.setText(R.string.fhospital);
                 Police.setText(R.string.fpolice);
+
+            }
+            else if (Language.equals("ES")){
+                Hotel.setText(R.string.shotel);
+                Restaurant.setText(R.string.sresta);
+                BankText.setText(R.string.sbank);
+                AtmText.setText(R.string.satm);
+                HospitalText.setText(R.string.shospital);
+                Police.setText(R.string.spolice);
 
             }
         }
