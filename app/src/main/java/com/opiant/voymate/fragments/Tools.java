@@ -119,7 +119,7 @@ public class Tools extends Fragment implements View.OnClickListener {
 
                 String language = String.valueOf(item.getTitle());
 
-                if (language.equals("Hindi")){
+                if (language.equals("हिंदी")){
 
                     Toast.makeText(getContext(),"Language Updated To:"+ language,Toast.LENGTH_SHORT).show();
                     SharedPreferences passwordPref = getActivity().getSharedPreferences("VoyMate", MODE_PRIVATE);

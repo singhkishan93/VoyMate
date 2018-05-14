@@ -290,7 +290,19 @@ public class PlaceInfo extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
 
             case R.id.listen:
-                showPopUp();
+                //showPopUp();
+                if (Language.equals("hi")){
+                    setLocale("hi");
+                }
+                else if (Language.equals("en")){
+                        setLocale("en");
+                }
+                else if (Language.equals("fr")){
+                    setLocale("fr");
+                }
+                else if (Language.equals("ES")){
+                    setLocale("ES");
+                }
 
             case R.id.activities:
                 fireIntent(new Intent(getContext(), PlacesOnMap.class), "hangout");

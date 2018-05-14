@@ -2,7 +2,7 @@
 
     <item
         android:id="@+id/hindi"
-        android:title="Hindi"/>
+        android:title="हिंदी"/>
 
     <item
         android:id="@+id/english"

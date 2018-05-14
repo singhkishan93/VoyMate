@@ -72,8 +72,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         runPermission();
         initViews();
 
-
-
     }
 
     public void initViews(){
